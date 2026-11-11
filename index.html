@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Latihan SKD CPNS 2026</title>
+<style>
+:root{--bg:#f2f5f3;--fg:#13201d;--mut:#586966;--card:#fff;--ac:#0f766e;--acfg:#fff;--tint:#e4f2ef;--bad:#b42318;--okbg:#e4f5ec;--nobg:#fdecea;--bd:#dfe7e4;--sh:0 1px 2px rgba(16,40,35,.06),0 8px 24px rgba(16,40,35,.07);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1514;--fg:#e6f0ed;--mut:#9bb0ab;--card:#16201f;--ac:#2dd4bf;--acfg:#032a25;--tint:#143230;--bad:#ff8f84;--okbg:#10301f;--nobg:#3a1714;--bd:#26393a;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1514;--fg:#e6f0ed;--mut:#9bb0ab;--card:#16201f;--ac:#2dd4bf;--acfg:#032a25;--tint:#143230;--bad:#ff8f84;--okbg:#10301f;--nobg:#3a1714;--bd:#26393a;--sh:none;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:600px;margin:0 auto;padding:16px 16px 40px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){main{animation:none}.btn,.tile{transition:none!important}}
+h1{font-size:1.65rem;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:26px 0 10px}
+p{margin:0 0 10px}.mut{color:var(--mut);font-size:.9rem}
+.hero{background:linear-gradient(135deg,#0f766e,#134e4a);color:#fff;border-radius:22px;padding:24px 20px;box-shadow:var(--sh);margin-bottom:14px}
+.hero p{opacity:.92;margin:0 0 14px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:rgba(255,255,255,.16);border-radius:999px;padding:4px 12px;font-size:.85rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;margin:10px 0;box-shadow:var(--sh)}
+details.card summary{cursor:pointer;min-height:28px;list-style:none}details.card summary::-webkit-details-marker{display:none}
+details.card summary::after{content:"+";float:right;color:var(--mut);font-weight:700}details[open].card summary::after{content:"\2212"}
+.note{font-size:.88rem;color:var(--mut);background:var(--tint);border-radius:14px;padding:12px 14px;margin:16px 0}
+.btn{display:block;width:100%;min-height:52px;margin:10px 0;padding:13px 16px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;text-align:left;cursor:pointer;box-shadow:var(--sh);transition:transform .08s,border-color .15s}
+.btn:active{transform:scale(.985)}.btn:focus-visible,.tile:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.btn.pri{background:var(--ac);color:var(--acfg);border-color:var(--ac);text-align:center;font-weight:700;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{min-height:92px;border-radius:16px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;cursor:pointer;box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .08s}
+.tile:active{transform:scale(.97)}.tile b{font-size:1.25rem;color:var(--ac)}.tile span{font-size:.82rem;color:var(--mut)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;background:var(--tint);color:var(--ac);border-radius:8px;padding:2px 10px}
+.bar{height:8px;background:var(--bd);border-radius:4px;margin:0 0 18px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);border-radius:4px;transition:width .3s}
+.q{font-size:1.1rem;font-weight:600;line-height:1.5;margin:0 0 14px}
+.opt{display:flex;gap:12px;align-items:flex-start;line-height:1.45}
+.opt .l{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--ac);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.opt.ok{background:var(--okbg);border:2px solid var(--ac)}.opt.no{background:var(--nobg);border:2px solid var(--bad)}
+.opt.ok .l{background:var(--ac);color:var(--acfg);font-size:0}.opt.ok .l::after{content:"\2713";font-size:1rem}
+.opt.no .l{background:var(--bad);color:#fff;font-size:0}.opt.no .l::after{content:"\2715";font-size:.95rem}
+#nx{position:sticky;bottom:12px}
+.ring{display:flex;justify-content:center;margin:8px 0 4px}
+.row2{display:flex;justify-content:space-between;font-size:.92rem;margin:12px 0 4px}
+ul{margin:8px 0 0;padding-left:20px}
+.row{display:flex;gap:8px}.row .btn{flex:1;text-align:center;padding:10px 6px}
+.opt.sel{background:var(--tint);border:2px solid var(--ac)}
+.tm{font-variant-numeric:tabular-nums;font-size:1.15rem;background:var(--tint);color:var(--ac);border-radius:10px;padding:2px 12px}
+.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;margin-bottom:8px}
+.nb{min-height:44px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;cursor:pointer}
+.nb.done{background:var(--ac);color:var(--acfg);border-color:var(--ac)}
+.nb.flg{outline:3px solid #d97706;outline-offset:-3px}
+.nb.cur{box-shadow:0 0 0 3px var(--fg)}
+.btn.opt{border:2px solid var(--bd);align-items:center}
+.btn.opt.ok,.btn.opt.sel{border-color:var(--ac)}
+.opt.sel .l{background:var(--ac);color:var(--acfg)}.btn.opt.no{border-color:var(--bad)}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const m=(k,q,o,c,e)=>({k,q,e,o:o.map((t,i)=>({t,p:i===c?5:0}))});
+const t=(q,a,e)=>({k:"TKP",q,e,o:a.map(([t,p])=>({t,p}))});
+const Q=[
+m("TWK","Sikap mendahulukan kepentingan bangsa di atas kepentingan golongan paling sesuai dengan sila ...",["Ketuhanan Yang Maha Esa","Kemanusiaan yang adil dan beradab","Persatuan Indonesia","Kerakyatan yang dipimpin oleh hikmat kebijaksanaan","Keadilan sosial bagi seluruh rakyat Indonesia"],2,"Mengutamakan kepentingan bangsa dan menjaga persatuan adalah nilai sila ke-3, Persatuan Indonesia."),
+m("TWK","Ketentuan bahwa kedaulatan berada di tangan rakyat dan dilaksanakan menurut Undang-Undang Dasar tercantum dalam ...",["Pasal 1 ayat (1)","Pasal 1 ayat (2)","Pasal 1 ayat (3)","Pasal 2 ayat (1)","Pasal 3 ayat (1)"],1,"Pasal 1 ayat (2) UUD 1945 memuat ketentuan tersebut."),
+m("TWK","Semboyan Bhinneka Tunggal Ika dikutip dari kitab ...",["Negarakertagama","Sutasoma","Pararaton","Arjunawiwaha","Bharatayuddha"],1,"Frasa itu berasal dari kitab Sutasoma karya Mpu Tantular."),
+m("TWK","Kongres Pemuda II yang menghasilkan Sumpah Pemuda berlangsung pada tahun ...",["1908","1912","1928","1945","1949"],2,"Sumpah Pemuda diikrarkan pada 28 Oktober 1928."),
+m("TIU","Dokter : Pasien = Guru : ...",["Sekolah","Murid","Buku","Ujian","Kepala sekolah"],1,"Dokter melayani pasien, sama seperti guru mengajar murid."),
+m("TIU","Lanjutkan deret: 2, 6, 18, 54, ...",["108","148","162","216","256"],2,"Setiap suku dikali 3, sehingga 54 x 3 = 162."),
+m("TIU","Semua pegawai disiplin. Sebagian pegawai berkacamata. Kesimpulan yang pasti benar adalah ...",["Semua yang berkacamata adalah pegawai","Sebagian yang berkacamata adalah pegawai disiplin","Semua pegawai berkacamata","Tidak ada pegawai berkacamata yang disiplin","Sebagian pegawai tidak disiplin"],1,"Sebagian pegawai berkacamata, dan semua pegawai disiplin, maka sebagian yang berkacamata pasti disiplin."),
+m("TIU","25% dari 840 adalah ...",["190","200","210","220","250"],2,"840 x 25/100 = 210."),
+t("Rekan baru kesulitan memakai aplikasi kantor, sementara kamu sedang sibuk. Sikapmu ...",[["Menjadwalkan sesi khusus sore ini dan memberi tahu rekan baru",4],["Meluangkan beberapa menit sekarang untuk menjelaskan inti, lalu membagikan panduan tertulis",5],["Mengerjakan tugas rekan itu sendiri agar cepat selesai",3],["Menyarankan membaca manual sendiri tanpa bantuan",2],["Membiarkan karena itu bukan tugasmu",1]],"Jawaban terbaik membantu langsung dan membuat rekan mandiri (jejaring kerja)."),
+t("Seorang warga marah karena antrean pelayanan lama. Sikapmu ...",[["Menjelaskan penyebab antrean dan perkiraan waktu dengan sopan",4],["Mendengarkan, meminta maaf atas ketidaknyamanan, menjelaskan alur, dan membantu mempercepat sesuai prosedur",5],["Meminta warga menyampaikan keluhan lewat kotak saran",3],["Meminta warga bersabar tanpa penjelasan",2],["Membalas dengan nada tinggi",1]],"Pelayanan publik yang baik: empati, informasi jelas, dan solusi sesuai prosedur."),
+t("Atasan memberi tugas di luar keahlianmu dengan tenggat dekat. Sikapmu ...",[["Menerima dan mengerjakan sebisanya tanpa bertanya",4],["Menyampaikan kendala, meminta arahan, dan belajar cepat dari rekan atau panduan agar tetap selesai",5],["Meminta tugas dialihkan ke rekan lain tanpa mencoba",3],["Menunda sampai mendekati tenggat",2],["Menolak mentah-mentah",1]],"Profesionalisme: jujur soal kendala, aktif belajar, dan bertanggung jawab pada hasil."),
+t("Kamu menemukan kabar hoaks di grup WhatsApp keluarga. Sikapmu ...",[["Mengirim tautan klarifikasi tanpa komentar",4],["Memeriksa kebenarannya di sumber resmi lalu meluruskan dengan sopan",5],["Mengabaikan karena bukan urusanmu",3],["Meneruskan ke grup lain untuk dimintai pendapat",2],["Menyebarkannya lebih luas",1]],"Verifikasi dulu, lalu luruskan dengan santun."),
+m("TWK","Pancasila ditetapkan sebagai dasar negara dalam sidang PPKI pada tanggal ...",["1 Juni 1945","22 Juni 1945","17 Agustus 1945","18 Agustus 1945","5 Juli 1959"],3,"Sidang PPKI 18 Agustus 1945 mengesahkan UUD 1945 beserta Pancasila sebagai dasar negara."),
+m("TWK","Lembaga yang berwenang menguji undang-undang terhadap UUD 1945 adalah ...",["Mahkamah Agung","Mahkamah Konstitusi","Komisi Yudisial","Dewan Perwakilan Rakyat","Badan Pemeriksa Keuangan"],1,"Pengujian undang-undang terhadap UUD 1945 menjadi kewenangan Mahkamah Konstitusi."),
+m("TWK","Tujuan negara Indonesia dirumuskan dalam Pembukaan UUD 1945 alinea ...",["pertama","kedua","ketiga","keempat","tidak dirumuskan di Pembukaan"],3,"Alinea keempat memuat tujuan negara dan dasar negara."),
+m("TWK","Bentuk negara Indonesia menurut Pasal 1 ayat (1) UUD 1945 adalah ...",["Federal","Kesatuan berbentuk republik","Monarki konstitusional","Persemakmuran","Serikat"],1,"Pasal 1 ayat (1): Negara Indonesia ialah negara kesatuan yang berbentuk republik."),
+m("TWK","Hari Kebangkitan Nasional diperingati berdasarkan berdirinya organisasi ...",["Sarekat Islam","Budi Utomo","Indische Partij","Muhammadiyah","Taman Siswa"],1,"Budi Utomo berdiri 20 Mei 1908 dan dijadikan tonggak kebangkitan nasional."),
+m("TWK","Naskah Proklamasi Kemerdekaan Indonesia diketik oleh ...",["Soekarno","Mohammad Hatta","Sayuti Melik","Achmad Soebardjo","Fatmawati"],2,"Sayuti Melik mengetik naskah proklamasi dari tulisan tangan Soekarno."),
+m("TWK","Nilai dasar ASN dalam BerAKHLAK yang menekankan memegang teguh ideologi Pancasila, UUD 1945, dan setia kepada NKRI adalah ...",["Akuntabel","Harmonis","Kolaboratif","Loyal","Adaptif"],3,"Loyal: memegang teguh ideologi Pancasila, UUD 1945, dan setia kepada NKRI."),
+m("TWK","Pembagian wilayah NKRI atas provinsi, kabupaten, dan kota diatur dalam Pasal ... UUD 1945",["1","18","27","28","33"],1,"Pasal 18 mengatur pemerintahan daerah."),
+m("TWK","Hak dan kewajiban warga negara ikut serta dalam upaya pembelaan negara terdapat dalam ...",["Pasal 27 ayat (3)","Pasal 28A","Pasal 29 ayat (1)","Pasal 31 ayat (1)","Pasal 33 ayat (1)"],0,"Pasal 27 ayat (3) mengatur hak dan kewajiban bela negara."),
+m("TWK","Ketentuan bahwa bumi, air, dan kekayaan alam dikuasai negara untuk kemakmuran rakyat terdapat dalam ...",["Pasal 31","Pasal 32","Pasal 33 ayat (3)","Pasal 34","Pasal 28H"],2,"Pasal 33 ayat (3) UUD 1945 memuat ketentuan tersebut."),
+m("TWK","Presiden Soeharto menyatakan berhenti dari jabatannya pada tanggal ...",["12 Mei 1998","20 Mei 1998","21 Mei 1998","1 Juni 1998","27 Juli 1998"],2,"Soeharto mengundurkan diri pada 21 Mei 1998, menandai awal masa Reformasi."),
+m("TWK","Sidang BPUPKI pertama (29 Mei sampai 1 Juni 1945) membahas ...",["Dasar negara","Teks proklamasi","Pembagian wilayah","Mata uang","Pemilihan presiden"],0,"Sidang pertama BPUPKI membahas dasar negara; pada 1 Juni 1945 Soekarno mengemukakan gagasan Pancasila."),
+m("TIU","Sinonim kata EKSPLISIT adalah ...",["tersirat","terselubung","tersurat","rumit","singkat"],2,"Eksplisit berarti jelas atau tersurat."),
+m("TIU","Antonim kata TRANSPARAN adalah ...",["terbuka","jelas","tertutup","tipis","bening"],2,"Transparan berarti terbuka atau jelas; lawannya tertutup."),
+m("TIU","Pena : Menulis = Pisau : ...",["Dapur","Memotong","Tajam","Makan","Logam"],1,"Fungsi pena adalah menulis, fungsi pisau adalah memotong."),
+m("TIU","Sepatu : Kaki = Topi : ...",["Kepala","Rambut","Matahari","Kain","Pakaian"],0,"Sepatu dipakai di kaki, topi dipakai di kepala."),
+m("TIU","Lanjutkan deret: 3, 5, 9, 17, 33, ...",["49","57","65","66","81"],2,"Selisihnya 2, 4, 8, 16, 32, sehingga 33 + 32 = 65."),
+m("TIU","Lanjutkan deret: 1, 4, 9, 16, 25, ...",["30","32","36","42","49"],2,"Deretnya bilangan kuadrat: 6 x 6 = 36."),
+m("TIU","Harga barang Rp80.000 mendapat diskon 15%. Harga yang dibayar adalah ...",["Rp62.000","Rp64.000","Rp66.000","Rp68.000","Rp72.000"],3,"Diskon 15% = Rp12.000, jadi 80.000 - 12.000 = Rp68.000."),
+m("TIU","Kendaraan berkecepatan 60 km/jam menempuh 150 km dalam waktu ...",["2 jam","2,5 jam","3 jam","3,5 jam","4 jam"],1,"Waktu = jarak / kecepatan = 150 / 60 = 2,5 jam."),
+m("TIU","Perbandingan umur A dan B adalah 3 : 5 dan jumlahnya 48 tahun. Umur B adalah ...",["18 tahun","24 tahun","28 tahun","30 tahun","32 tahun"],3,"48 : 8 = 6, maka B = 5 x 6 = 30 tahun."),
+m("TIU","Jika hujan, maka jalan basah. Jalan tidak basah. Kesimpulannya ...",["Hujan","Tidak hujan","Jalan licin","Mungkin hujan","Tidak dapat disimpulkan"],1,"Kontraposisi: jalan tidak basah berarti tidak hujan."),
+m("TIU","Semua kucing adalah hewan. Tidak ada hewan yang berupa tumbuhan. Kesimpulan yang benar ...",["Sebagian kucing adalah tumbuhan","Tidak ada kucing yang berupa tumbuhan","Semua hewan adalah kucing","Semua tumbuhan adalah hewan","Sebagian hewan adalah kucing tumbuhan"],1,"Kucing termasuk hewan, hewan bukan tumbuhan, sehingga kucing bukan tumbuhan."),
+m("TIU","Andi lebih tinggi dari Budi. Budi lebih tinggi dari Citra. Dedi lebih rendah dari Citra. Siapa yang paling tinggi?",["Andi","Budi","Citra","Dedi","Tidak dapat ditentukan"],0,"Urutan tinggi: Andi > Budi > Citra > Dedi."),
+t("Pemohon layanan membawa berkas yang kurang satu dokumen. Sikapmu ...",[["Menjelaskan dokumen yang kurang, memberi daftar persyaratan lengkap, dan cara melengkapinya",5],["Menyebutkan dokumen yang kurang lalu mempersilakan datang lagi",4],["Meminta pemohon membaca papan pengumuman persyaratan",3],["Meminta pemohon bertanya ke loket lain",2],["Menolak dan menyuruh pulang",1]],"Pelayanan yang baik memberi informasi jelas dan solusi."),
+t("Kamu menerima email berisi tautan mencurigakan yang meminta kata sandi akun kantor. Sikapmu ...",[["Tidak membuka, melaporkan ke unit TI, lalu menghapusnya",5],["Tidak membuka dan menghapusnya",4],["Menanyakan ke rekan sebelum membukanya",3],["Membuka tautan tetapi tidak mengisi data",2],["Mengisi data agar akun tidak diblokir",1]],"Jangan klik; laporkan agar pegawai lain terlindungi (TIK)."),
+t("Dua rekan berselisih sehingga mengganggu kerja tim. Sikapmu ...",[["Mengajak keduanya berdiskusi mencari kesepakatan demi target tim",5],["Menyarankan mereka menyelesaikan sendiri",4],["Melaporkan ke atasan tanpa mencoba menengahi",3],["Menjaga jarak agar tidak terlibat",2],["Memihak salah satu",1]],"Menengahi secara netral menjaga jejaring kerja."),
+t("Rapat penting bertepatan dengan hari raya keagamaan salah satu rekan. Sikapmu ...",[["Mengusulkan jadwal lain agar semua dapat hadir",5],["Tetap rapat lalu memberi ringkasan kepada rekan tersebut",4],["Rapat dengan peserta lain dan menyerahkan notulen",3],["Meminta rekan itu memilih antara rapat dan hari rayanya",2],["Mengatakan hari raya bukan alasan tidak hadir",1]],"Menghargai perbedaan keyakinan (sosial budaya)."),
+t("Kamu menyadari ada kesalahan data pada laporan yang sudah dikirim. Sikapmu ...",[["Segera melapor ke atasan, memperbaiki, dan mengirim revisi",5],["Memperbaiki dan mengirim ulang tanpa memberi tahu",4],["Memperbaikinya pada laporan berikutnya",3],["Menunggu sampai ada yang menyadari",2],["Menyalahkan rekan penyedia data",1]],"Jujur dan bertanggung jawab (profesionalisme)."),
+t("Kamu mendengar rekan menyebarkan ujaran kebencian terhadap kelompok tertentu. Sikapmu ...",[["Menegur dengan santun, mengingatkan nilai persatuan, dan melapor bila berlanjut",5],["Menegur dengan santun",4],["Menghindar dari percakapan itu",3],["Mengabaikan",2],["Ikut tertawa",1]],"Menolak intoleransi dengan cara santun (anti radikalisme)."),
+t("Seorang lansia kesulitan mengisi formulir layanan. Sikapmu ...",[["Mendampingi dan membantu mengisi dengan sabar",5],["Meminta petugas lain membantu",4],["Memberi contoh formulir yang sudah terisi",3],["Meminta keluarganya datang membantu",2],["Meminta lansia mengisi sendiri",1]],"Pelayanan ramah dan inklusif."),
+t("Atasan menginstruksikan hal yang tidak sesuai prosedur. Sikapmu ...",[["Menyampaikan aturan yang berlaku dengan sopan dan mengusulkan alternatif sesuai prosedur",5],["Meminta instruksi tertulis terlebih dahulu",4],["Bertanya ke rekan senior sebelum memutuskan",3],["Menjalankan karena itu perintah atasan",2],["Menolak dengan kasar",1]],"Tetap taat aturan dengan komunikasi yang baik."),
+t("Kantor mewajibkan aplikasi baru yang belum kamu kuasai. Sikapmu ...",[["Mengikuti pelatihan, bertanya, dan berlatih sampai mahir",5],["Belajar sendiri dari panduan",4],["Menunggu rekan membantu",3],["Tetap memakai cara lama",2],["Menolak memakai aplikasi itu",1]],"Adaptif terhadap teknologi (TIK)."),
+t("Timmu butuh data dari unit lain yang lambat merespons. Sikapmu ...",[["Menghubungi langsung dengan sopan, menjelaskan urgensi dan tenggat, lalu menindaklanjuti",5],["Mengirim pengingat tertulis",4],["Meminta atasan yang menghubungi",3],["Menunggu sampai data dikirim",2],["Mengerjakan dengan data seadanya tanpa memberi tahu",1]],"Proaktif membangun kerja sama lintas unit."),
+t("Seorang warga berbicara bahasa daerah dan kesulitan berbahasa Indonesia saat dilayani. Sikapmu ...",[["Berbicara pelan dan sederhana serta meminta bantuan rekan yang memahami bahasa daerahnya",5],["Meminta warga memakai bahasa Indonesia",4],["Memanggil rekan untuk menggantikan",3],["Melayani sekadarnya",2],["Mengeluh kepada warga",1]],"Menghargai keberagaman dan memastikan layanan dipahami."),
+t("Jam pelayanan selesai tetapi masih ada pemohon yang mengantre. Sikapmu ...",[["Tetap melayani yang sudah mengantre sesuai aturan dan menginformasikan jam layanan besok",5],["Melayani sebagian dan meminta sisanya datang besok",4],["Meminta pemohon datang besok dengan penjelasan",3],["Menutup loket tanpa penjelasan",2],["Mematikan lampu dan pulang",1]],"Mengutamakan pelayanan tanpa melanggar aturan."),
+m("TWK","Lambang sila keempat Pancasila adalah ...",["Bintang","Rantai","Pohon beringin","Kepala banteng","Padi dan kapas"],3,"Sila keempat dilambangkan dengan kepala banteng."),
+m("TWK","Jaminan kemerdekaan tiap penduduk untuk memeluk agama dan beribadah tercantum dalam ...",["Pasal 28E","Pasal 29 ayat (2)","Pasal 30","Pasal 31","Pasal 32"],1,"Pasal 29 ayat (2) menjamin kemerdekaan memeluk agama dan beribadah."),
+m("TWK","Anggota MPR terdiri atas anggota DPR dan anggota ...",["DPRD","DPD","Mahkamah Agung","BPK","Menteri"],1,"Pasal 2 ayat (1) UUD 1945: MPR terdiri atas anggota DPR dan DPD."),
+m("TWK","Hari Pahlawan 10 November memperingati pertempuran di ...",["Bandung","Semarang","Surabaya","Ambarawa","Medan"],2,"Hari Pahlawan memperingati pertempuran di Surabaya pada November 1945."),
+m("TWK","Konferensi Asia Afrika tahun 1955 diselenggarakan di ...",["Jakarta","Bandung","Yogyakarta","Denpasar","Surabaya"],1,"KAA 1955 berlangsung di Bandung."),
+m("TWK","Nilai BerAKHLAK yang menekankan bertanggung jawab atas kepercayaan yang diberikan adalah ...",["Kompeten","Akuntabel","Harmonis","Adaptif","Loyal"],1,"Akuntabel berarti bertanggung jawab atas kepercayaan yang diberikan."),
+m("TWK","Proklamator kemerdekaan Indonesia adalah ...",["Soekarno dan Sutan Sjahrir","Soekarno dan Mohammad Hatta","Soekarno dan Ki Hajar Dewantara","Mohammad Hatta dan Sutan Sjahrir","Soekarno dan Soeharto"],1,"Proklamasi dibacakan oleh Soekarno dan Mohammad Hatta pada 17 Agustus 1945."),
+m("TWK","Perubahan UUD 1945 pada masa Reformasi dilakukan sebanyak ... kali",["2","3","4","5","6"],2,"UUD 1945 diubah empat kali, pada tahun 1999 sampai 2002."),
+m("TWK","Lembaga negara yang memeriksa pengelolaan dan tanggung jawab keuangan negara adalah ...",["Bank Indonesia","Badan Pemeriksa Keuangan","Otoritas Jasa Keuangan","Komisi Pemberantasan Korupsi","Mahkamah Agung"],1,"Pemeriksaan keuangan negara adalah tugas Badan Pemeriksa Keuangan (BPK)."),
+m("TWK","Jumlah bulu pada masing-masing sayap Garuda Pancasila adalah ...",["8","17","19","45","5"],1,"Sayap 17, ekor 8, pangkal ekor 19, leher 45, melambangkan 17 Agustus 1945."),
+m("TIU","Sinonim kata AKURAT adalah ...",["tepat","cepat","lambat","kasar","jauh"],0,"Akurat berarti tepat dan teliti."),
+m("TIU","Antonim kata MUTAKHIR adalah ...",["modern","terbaru","kuno","canggih","cepat"],2,"Mutakhir berarti terbaru; lawannya kuno."),
+m("TIU","Mata : Melihat = Telinga : ...",["Suara","Mendengar","Kepala","Berbicara","Musik"],1,"Fungsi mata adalah melihat, fungsi telinga adalah mendengar."),
+m("TIU","Panas : Dingin = Tinggi : ...",["Besar","Rendah","Jauh","Lebar","Panjang"],1,"Panas berlawanan dengan dingin, tinggi berlawanan dengan rendah."),
+m("TIU","Lanjutkan deret: 5, 10, 20, 40, ...",["60","70","80","90","100"],2,"Setiap suku dikali 2, jadi 40 x 2 = 80."),
+m("TIU","Lanjutkan deret: 100, 90, 81, 73, 66, ...",["58","59","60","61","62"],2,"Selisihnya turun 10, 9, 8, 7, 6, jadi 66 - 6 = 60."),
+m("TIU","3/4 + 1/2 = ...",["4/6","1","5/4","3/2","7/4"],2,"3/4 + 2/4 = 5/4."),
+m("TIU","Rata-rata lima bilangan adalah 12. Empat bilangan di antaranya 10, 12, 14, dan 11. Bilangan kelima adalah ...",["11","12","13","14","15"],2,"Jumlah seluruhnya 60. Empat bilangan berjumlah 47, jadi yang kelima 13."),
+m("TIU","Enam orang menyelesaikan pekerjaan dalam 10 hari. Jika dikerjakan 12 orang, selesai dalam ... hari",["4","5","6","8","20"],1,"Jumlah orang dua kali lipat, waktu menjadi setengahnya: 5 hari."),
+m("TIU","Semua A adalah B. Semua B adalah C. Kesimpulan yang benar ...",["Semua C adalah A","Semua A adalah C","Sebagian C bukan B","Tidak ada A yang C","Semua B adalah A"],1,"A termasuk B dan B termasuk C, maka A termasuk C."),
+t("Warga mengeluhkan layanan kantormu lewat media sosial. Sikapmu ...",[["Menanggapi dengan sopan, menelusuri masalahnya, menindaklanjuti, dan mengabari hasilnya",5],["Membalas singkat dan mengarahkan ke kanal pengaduan resmi",4],["Meneruskan ke atasan tanpa menjawab warga",3],["Menunggu sampai ada instruksi",2],["Menghapus komentar tersebut",1]],"Tanggapan cepat, sopan, dan tuntas adalah inti pelayanan publik."),
+t("Target kerjamu bulan ini belum tercapai. Sikapmu ...",[["Menganalisis penyebabnya, menyusun rencana perbaikan, dan melapor ke atasan",5],["Menambah jam kerja tanpa melapor",4],["Meminta tenggat diperpanjang tanpa rencana",3],["Menunggu bantuan datang",2],["Menyalahkan keadaan",1]],"Profesional: terbuka soal kendala dan punya rencana."),
+t("Rekan beda generasi memakai cara kerja yang berbeda darimu. Sikapmu ...",[["Mengajak berdiskusi dan menggabungkan kelebihan kedua cara",5],["Menyesuaikan diri dengan cara rekan",4],["Tetap memakai caramu sendiri",3],["Menghindari kerja sama",2],["Mengejek cara kerjanya",1]],"Kolaborasi yang menghargai perbedaan."),
+t("Pegawai baru dari daerah lain dijadikan bahan lelucon karena logatnya. Sikapmu ...",[["Menegur dengan santun dan mengajak menghargai perbedaan",5],["Mengajak pegawai baru bergabung berbincang",4],["Diam saja",3],["Ikut tersenyum",2],["Ikut bercanda",1]],"Sosial budaya: menolak merendahkan orang lain."),
+t("Kamu harus presentasi lewat video call, tetapi koneksi sering terganggu. Sikapmu ...",[["Menyiapkan jaringan cadangan, mengirim materi lebih dulu, dan memberi tahu peserta",5],["Mencoba memperbaiki koneksi saat berlangsung",4],["Menunda dan memberi tahu peserta",3],["Menunggu koneksi membaik tanpa memberi tahu",2],["Membatalkan sepihak",1]],"Antisipasi risiko teknis (TIK)."),
+t("Seseorang mengajakmu bergabung kelompok yang menolak Pancasila. Sikapmu ...",[["Menolak tegas dan melaporkan kepada pihak berwenang atau atasan",5],["Menolak tegas lalu menjauh",4],["Menolak dengan halus",3],["Mendengarkan dulu tanpa menolak",2],["Ikut bergabung",1]],"Anti radikalisme: tegas menolak dan melapor."),
+t("Warga meminta layanan di luar kewenangan unitmu. Sikapmu ...",[["Menjelaskan dengan sopan dan mengarahkan ke unit berwenang beserta alurnya",5],["Menyebut unit yang berwenang",4],["Meminta warga mencari sendiri",3],["Menolak tanpa penjelasan",2],["Menjanjikan layanan padahal bukan kewenanganmu",1]],"Arahkan dengan jelas tanpa melanggar kewenangan."),
+t("Seorang rekan berulang kali datang terlambat. Sikapmu ...",[["Menegur secara pribadi dengan baik dan melapor jika terus berulang",5],["Menegur secara pribadi",4],["Membicarakannya dengan rekan lain",3],["Mengabaikan",2],["Mempermalukannya di depan umum",1]],"Tegur dengan baik dan tetap hormati rekan."),
+t("Atasan memuji kamu atas keberhasilan proyek yang dikerjakan bersama tim. Sikapmu ...",[["Mengakui kontribusi seluruh tim",5],["Berterima kasih dan menyebut peran rekan tertentu",4],["Menerima pujian tanpa komentar",3],["Menyebut kontribusimu paling besar",2],["Mengatakan itu hasil kerjamu sendiri",1]],"Menghargai kerja tim."),
+t("Rekan meminta salinan data pribadi warga di komputer kantor untuk keperluan pribadi. Sikapmu ...",[["Menolak dengan sopan dan menjelaskan bahwa data wajib dilindungi",5],["Menolak dan melapor ke atasan",4],["Meminta izin tertulis atasan dulu",3],["Memberikan sebagian saja",2],["Memberikan salinannya",1]],"Data pribadi harus dilindungi (integritas dan TIK).")
+
+];
+const KISI={TWK:["Pancasila, UUD 1945, NKRI, Bhinneka Tunggal Ika","Nasionalisme, integritas, bela negara","Sejarah dan isu nasional"],TIU:["Verbal: analogi, sinonim dan antonim","Numerik: deret dan hitungan","Logika: silogisme; figural"],TKP:["Pelayanan publik, jejaring kerja","Sosial budaya, teknologi informasi dan komunikasi","Profesionalisme, anti radikalisme"]};
+const NAMA={TWK:"Tes Wawasan Kebangsaan",TIU:"Tes Intelegensia Umum",TKP:"Tes Karakteristik Pribadi"};
+const app=document.getElementById("app");
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+const nQ=k=>Q.filter(q=>q.k===k).length;
+// Isi dengan nomor WhatsApp-mu (format 628xxxxxxxxxx) agar tombol masukan muncul.
+const FEEDBACK="";
+let L=[],i=0,sc,mx,ans;
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+// Isi SHARE dengan link unduh APK (mis. halaman Releases GitHub) setelah APK jadi.
+const SHARE="";
+const url=()=>SHARE||location.href.split("#")[0];
+function waTo(text){window.open("https://wa.me/"+FEEDBACK+"?text="+encodeURIComponent(text),"_blank","noopener")}
+function wa(text){window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")}
+function home(){
+ app.innerHTML=`<section class="hero"><h1>Latihan SKD CPNS 2026</h1><p>Soal latihan TWK, TIU, dan TKP dengan pembahasan di setiap soal.</p><div class="chips"><span>${Q.length} soal</span><span>3 subtes</span><span>Ada pembahasan</span></div></section>
+ ${load()?`<button class="btn" id="rs"><b>Lanjutkan simulasi ${PACK[load().p].n}</b><br><span class="mut">Waktu ujian masih berjalan</span></button>`:""}<button class="btn pri" data-c="ALL">Mulai: 20 soal acak</button>
+ <h2>Simulasi tryout (paket tetap)</h2><p class="mut">Soal dan waktu sama untuk semua peserta, mirip CAT: ada penghitung waktu, penanda ragu-ragu, dan navigasi nomor.</p>
+ ${PACK.map((P,p)=>`<button class="btn" data-p="${p}"><b>${P.n}</b><br><span class="mut">${P.tw+P.ti+P.tk} soal, ${P.min} menit (TWK ${P.tw}, TIU ${P.ti}, TKP ${P.tk})</span></button>`).join("")}
+ <h2>Pilih subtes</h2>
+ <div class="grid">${["TWK","TIU","TKP"].map(k=>`<button class="tile" data-c="${k}"><b>${k}</b><span>${nQ(k)} soal</span></button>`).join("")}</div>
+ <h2>Kisi-kisi materi</h2>
+ ${Object.keys(KISI).map(k=>`<details class="card"><summary><b>${k}</b> &nbsp;${NAMA[k]}</summary><ul>${KISI[k].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("")}
+ <div class="note"><strong>Struktur SKD (acuan, bisa berubah tiap tahun):</strong> 110 soal dalam 100 menit (TWK 30, TIU 35, TKP 45). Ambang batas tahun-tahun sebelumnya: TWK 65, TIU 80, TKP 166. Angka dari laporan media, pastikan ke pengumuman resmi di SSCASN dan situs BKN. Aplikasi ini bukan aplikasi resmi BKN atau KemenPANRB, soalnya buatan sendiri, dan tidak menjamin kelulusan.</div>
+ <details class="card"><summary><b>Tentang aplikasi</b></summary><p style="margin-top:8px">Aplikasi latihan mandiri, bukan aplikasi resmi BKN atau KemenPANRB. Soal dibuat sendiri dan belum tentu sama dengan soal asli. Tidak ada jaminan kelulusan. Aplikasi ini tidak meminta login dan tidak mengirim data pribadi ke server; progres simulasi hanya disimpan di perangkatmu. Tombol masukan membuka WhatsApp dengan pesan yang kamu kirim sendiri.</p></details>
+ <button class="btn" id="sh">Bagikan aplikasi ke WhatsApp</button>${FEEDBACK?`<button class="btn" id="fbk">Kirim masukan ke pembuat</button>`:""}`;
+ app.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>start(b.dataset.c));
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>startCat(+b.dataset.p));
+ if(document.getElementById("rs"))document.getElementById("rs").onclick=resume;
+ document.getElementById("sh").onclick=()=>wa("Latihan soal SKD CPNS 2026 (TWK, TIU, TKP) dengan kisi-kisi dan pembahasan: "+url());
+ if(FEEDBACK)document.getElementById("fbk").onclick=()=>waTo("Masukan untuk Latihan SKD CPNS 2026:\n");
+}
+function start(c){L=shuf(Q.filter(q=>c==="ALL"||q.k===c));if(c==="ALL")L=L.slice(0,20);i=0;sc={TWK:0,TIU:0,TKP:0};mx={TWK:0,TIU:0,TKP:0};ans=null;show()}
+function show(){
+ const q=L[i];ans=null;
+ app.innerHTML=`<div class="top"><span class="tag">${q.k}</span><span class="mut">${i+1} / ${L.length}</span></div><div class="bar"><i style="width:${i/L.length*100}%"></i></div>
+ <p class="q">${esc(q.q)}</p>
+ ${q.o.map((o,j)=>`<button class="btn opt" data-j="${j}"><span class="l">${String.fromCharCode(65+j)}</span><span>${esc(o.t)}</span></button>`).join("")}
+ <div id="fb"></div>`;
+ app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.j));
+ window.scrollTo(0,0);
+}
+function pick(j){
+ if(ans!==null)return;ans=j;const q=L[i],best=Math.max(...q.o.map(o=>o.p));
+ sc[q.k]+=q.o[j].p;mx[q.k]+=best;
+ app.querySelectorAll(".opt").forEach((b,x)=>{if(q.o[x].p===best)b.classList.add("ok");else if(x===j)b.classList.add("no")});
+ document.getElementById("fb").innerHTML=`<div class="card"><strong>Poin: ${q.o[j].p} dari ${best}</strong><p style="margin:6px 0 0">${esc(q.e)}</p></div>
+ <button class="btn" id="sq">Bagikan soal ini ke WhatsApp</button>${FEEDBACK?`<button class="btn" id="rp">Laporkan soal atau jawaban ini</button>`:""}<button class="btn pri" id="nx">${i+1<L.length?"Soal berikutnya":"Lihat hasil"}</button>`;
+ document.getElementById("nx").onclick=()=>{i++;i<L.length?show():fin()};
+ if(FEEDBACK)document.getElementById("rp").onclick=()=>waTo("Laporan soal ("+q.k+"):\n"+q.q+"\nJawaban saya: "+q.o[j].t+"\nCatatan: ");
+ document.getElementById("sq").onclick=()=>wa("Coba jawab soal latihan SKD CPNS ini:\n\n"+q.q+"\n"+q.o.map((o,x)=>String.fromCharCode(65+x)+". "+o.t).join("\n")+"\n\nLebih banyak soal: "+url());
+}
+function fin(){
+ const ks=["TWK","TIU","TKP"].filter(k=>mx[k]>0),tot=ks.reduce((a,k)=>a+sc[k],0),tm=ks.reduce((a,k)=>a+mx[k],0);
+ const pct=Math.round(tot/tm*100),line=ks.map(k=>`${k} ${sc[k]}/${mx[k]}`).join(", ");
+ const msg=pct>=80?"Hasil sangat baik. Pertahankan ritme latihanmu.":pct>=60?"Cukup baik. Pelajari ulang bagian yang masih salah.":"Masih perlu banyak latihan. Ulangi materi dasarnya dulu.";
+ app.innerHTML=`<h1>Hasil latihan</h1>
+ <div class="card"><div class="ring"><svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Skor ${pct} persen"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bd)" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ac)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(pct*3.267).toFixed(1)} 400" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-size="26" font-weight="700" fill="var(--fg)">${pct}%</text></svg></div>
+ <p style="text-align:center;margin:0 0 6px"><strong>${tot} dari ${tm} poin</strong></p><p class="mut" style="text-align:center">${msg}</p>
+ ${ks.map(k=>`<div class="row2"><span>${k}</span><span>${sc[k]} / ${mx[k]}</span></div><div class="bar" style="margin:0"><i style="width:${sc[k]/mx[k]*100}%"></i></div>`).join("")}</div>
+ <p class="mut">Ini latihan mini, jadi skornya bukan prediksi nilai SKD sebenarnya.</p>
+ <button class="btn pri" id="sr">Bagikan hasil ke WhatsApp</button><button class="btn" id="ag">Latihan lagi</button>`;
+ document.getElementById("sr").onclick=()=>wa("Hasil latihan SKD CPNS 2026 saya: "+line+". Coba juga: "+url());
+ document.getElementById("ag").onclick=home;
+ window.scrollTo(0,0);
+}
+const PACK=[{n:"Paket 1",tw:6,ti:8,tk:10,min:22},{n:"Paket 2",tw:6,ti:8,tk:10,min:22}];
+let C=null,tmr=null;
+const idxOf=k=>Q.map((q,i)=>q.k===k?i:-1).filter(i=>i>=0);
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+function ringSvg(pct){return `<svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Skor ${pct} persen"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bd)" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ac)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(pct*3.267).toFixed(1)} 400" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-size="26" font-weight="700" fill="var(--fg)">${pct}%</text></svg>`}
+function startCat(p){
+ const P=PACK[p],s=n=>idxOf(n.k).slice(p*n.c,p*n.c+n.c);
+ C={p,qs:[...s({k:"TWK",c:P.tw}),...s({k:"TIU",c:P.ti}),...s({k:"TKP",c:P.tk})],ans:{},flag:{},cur:0,end:Date.now()+P.min*60000,sure:false};
+ clearInterval(tmr);tmr=setInterval(tick,1000);catShow();window.scrollTo(0,0);
+}
+function tick(){
+ const r=Math.max(0,Math.round((C.end-Date.now())/1000)),e=document.getElementById("tm");
+ if(e)e.textContent=fmt(r);
+ if(r<=0)catFin();
+}
+function go(n){C.cur=Math.max(0,Math.min(C.qs.length-1,n));C.sure=false;catShow();window.scrollTo(0,0)}
+function catShow(){
+ const k=C.qs[C.cur],q=Q[k];save();
+ app.innerHTML=`<div class="top"><span class="tag">${q.k}</span><b id="tm" class="tm"></b></div>
+ <p class="mut">Soal ${C.cur+1} dari ${C.qs.length}</p><p class="q">${esc(q.q)}</p>
+ ${q.o.map((o,j)=>`<button class="btn opt${C.ans[k]===j?" sel":""}" data-j="${j}"><span class="l">${String.fromCharCode(65+j)}</span><span>${esc(o.t)}</span></button>`).join("")}
+ <div class="row"><button class="btn" id="pv">Sebelumnya</button><button class="btn" id="fl">${C.flag[k]?"Batal ragu":"Ragu-ragu"}</button><button class="btn" id="nx2">Berikutnya</button></div>
+ <h2>Navigasi soal</h2><div class="nav">${C.qs.map((x,n)=>`<button class="nb${n===C.cur?" cur":""}${C.ans[x]!==undefined?" done":""}${C.flag[x]?" flg":""}" data-n="${n}" aria-label="Soal ${n+1}">${n+1}${C.flag[x]?"*":""}</button>`).join("")}</div>
+ <p class="mut">Terisi = dijawab. Tanda * = ragu-ragu.</p>
+ <button class="btn pri" id="fin">${C.sure?"Yakin selesai? Ketuk lagi":"Selesai ujian"}</button>`;
+ app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{C.ans[k]=+b.dataset.j;C.sure=false;catShow()});
+ app.querySelectorAll(".nb").forEach(b=>b.onclick=()=>go(+b.dataset.n));
+ document.getElementById("pv").onclick=()=>go(C.cur-1);
+ document.getElementById("nx2").onclick=()=>go(C.cur+1);
+ document.getElementById("fl").onclick=()=>{C.flag[k]=!C.flag[k];C.sure=false;catShow()};
+ document.getElementById("fin").onclick=()=>{if(C.sure)catFin();else{C.sure=true;catShow()}};
+ tick();
+}
+function catFin(){
+ clearInterval(tmr);drop();
+ const S={TWK:[0,0],TIU:[0,0],TKP:[0,0]};
+ C.qs.forEach(k=>{const q=Q[k];S[q.k][1]+=Math.max(...q.o.map(o=>o.p));if(C.ans[k]!==undefined)S[q.k][0]+=q.o[C.ans[k]].p});
+ const ks=Object.keys(S).filter(x=>S[x][1]>0),tot=ks.reduce((a,x)=>a+S[x][0],0),mxs=ks.reduce((a,x)=>a+S[x][1],0),pct=Math.round(tot/mxs*100);
+ const na=C.qs.filter(k=>C.ans[k]===undefined).length,line=ks.map(x=>`${x} ${S[x][0]}/${S[x][1]}`).join(", ");
+ app.innerHTML=`<h1>Hasil ${PACK[C.p].n}</h1>
+ <div class="card"><div class="ring">${ringSvg(pct)}</div><p style="text-align:center;margin:0 0 6px"><strong>${tot} dari ${mxs} poin</strong></p><p class="mut" style="text-align:center">${na} soal tidak dijawab.</p>
+ ${ks.map(x=>`<div class="row2"><span>${x}</span><span>${S[x][0]} / ${S[x][1]}</span></div><div class="bar" style="margin:0"><i style="width:${S[x][0]/S[x][1]*100}%"></i></div>`).join("")}</div>
+ <p class="mut">Ini simulasi mini, bukan prediksi nilai SKD sebenarnya.</p>
+ <button class="btn pri" id="sr">Bagikan hasil ke WhatsApp</button>
+ <h2>Pembahasan</h2>
+ ${C.qs.map((k,n)=>{const q=Q[k],a=C.ans[k],best=Math.max(...q.o.map(o=>o.p)),bi=q.o.findIndex(o=>o.p===best);return `<details class="card"><summary><b>${n+1}.</b> ${esc(q.q)}</summary><p style="margin-top:8px">Jawabanmu: ${a===undefined?"tidak dijawab":esc(q.o[a].t)+" ("+q.o[a].p+" poin)"}</p><p>Terbaik: ${esc(q.o[bi].t)} (${best} poin)</p><p class="mut">${esc(q.e)}</p></details>`}).join("")}
+ <button class="btn" id="ag">Kembali ke awal</button>`;
+ document.getElementById("sr").onclick=()=>wa("Hasil simulasi "+PACK[C.p].n+" SKD CPNS 2026 saya: "+line+". Coba juga: "+url());
+ document.getElementById("ag").onclick=home;
+ window.scrollTo(0,0);
+}
+const KEY="skd-cat-v1";
+function save(){try{if(C)localStorage.setItem(KEY,JSON.stringify(C))}catch(e){}}
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.end>Date.now())return s;localStorage.removeItem(KEY)}catch(e){}return null}
+function drop(){try{localStorage.removeItem(KEY)}catch(e){}}
+function resume(){const s=load();if(!s)return home();C=s;clearInterval(tmr);tmr=setInterval(tick,1000);catShow();window.scrollTo(0,0)}
+home();
+if("serviceWorker" in navigator)addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
+</script>
+</body>
+</html>
