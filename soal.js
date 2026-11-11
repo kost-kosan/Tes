@@ -10,7 +10,7 @@
 //
 // Paket tryout bertambah otomatis kalau jumlah soal cukup (tiap paket: 6 TWK, 8 TIU, 10 TKP).
 const m=(k,q,o,c,e,tp)=>({k,q,e,tp,o:o.map((t,i)=>({t,p:i===c?5:0}))});
-const t=(q,a,e)=>({k:"TKP",q,e,o:a.map(([t,p])=>({t,p}))});
+const t=(q,a,e,tp)=>({k:"TKP",q,e,tp,o:a.map(([t,p])=>({t,p}))});
 const Q=[
 m("TWK","Sikap mendahulukan kepentingan bangsa di atas kepentingan golongan paling sesuai dengan sila ...",["Ketuhanan Yang Maha Esa","Kemanusiaan yang adil dan beradab","Persatuan Indonesia","Kerakyatan yang dipimpin oleh hikmat kebijaksanaan","Keadilan sosial bagi seluruh rakyat Indonesia"],2,"Mengutamakan kepentingan bangsa dan menjaga persatuan adalah nilai sila ke-3, Persatuan Indonesia."),
 m("TWK","Ketentuan bahwa kedaulatan berada di tangan rakyat dan dilaksanakan menurut Undang-Undang Dasar tercantum dalam ...",["Pasal 1 ayat (1)","Pasal 1 ayat (2)","Pasal 1 ayat (3)","Pasal 2 ayat (1)","Pasal 3 ayat (1)"],1,"Pasal 1 ayat (2) UUD 1945 memuat ketentuan tersebut."),

@@ -78,11 +78,32 @@ ul{margin:8px 0 0;padding-left:20px}
 .tm{box-shadow:0 3px 0 var(--edge)}
 .tag{box-shadow:0 2px 0 var(--edge)}
 @media (prefers-reduced-motion:reduce){.btn:active,.tile:active,.nb:active{transform:none}}
+
+.hd{display:flex;gap:14px;align-items:center;margin:4px 0 18px}.hd h1{margin:0;font-size:1.35rem}.hd p{margin:0}
+.logo{width:56px;height:56px;flex:none;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#14998c,#0f766e);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 4px 0 #0a4f49,0 10px 18px rgba(15,118,110,.3)}
+.big{display:block;width:100%;text-align:left;border:0;border-radius:22px;padding:22px 20px;margin:12px 0;font:inherit;cursor:pointer;color:#fff;background:linear-gradient(135deg,#14998c,#0f766e 55%,#134e4a);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 6px 0 #0a3f3a,0 18px 30px rgba(10,63,58,.3);transition:transform .08s,box-shadow .08s}
+.big span{display:block;font-size:1.4rem;font-weight:800}.big small{display:block;opacity:.92;font-size:.92rem;margin-top:2px}
+.big:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 2px 0 #0a3f3a,0 6px 10px rgba(10,63,58,.3)}
+.big.resume{background:linear-gradient(135deg,#f59e0b,#b45309);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 6px 0 #78350f,0 16px 26px rgba(120,53,15,.3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sub{border:0;border-radius:20px;padding:16px 6px 14px;font:inherit;cursor:pointer;color:#fff;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 80%,#fff),var(--c));box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 5px 0 color-mix(in srgb,var(--c) 65%,#000),0 12px 20px rgba(0,0,0,.14);display:flex;flex-direction:column;align-items:center;gap:2px}
+.sub i{font-style:normal;font-size:1.8rem;line-height:1.2}.sub b{font-size:1.1rem}.sub small{opacity:.92}
+.sub:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 1px 0 color-mix(in srgb,var(--c) 65%,#000)}
+.row3{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:var(--fg);cursor:pointer;border:1px solid var(--bd);border-radius:18px;padding:14px 16px;margin:10px 0;background:linear-gradient(180deg,var(--card),var(--card2));box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 4px 0 var(--edge),0 10px 18px rgba(16,40,35,.08)}
+.row3 i{font-style:normal;font-size:1.6rem}.row3 span{flex:1}.row3 b{display:block}.row3 small{display:block;color:var(--mut)}.row3 em{font-style:normal;font-size:1.6rem;color:var(--mut)}
+.row3:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+.foot{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:22px}.lnk{background:none;border:0;color:var(--ac);font:inherit;font-weight:600;padding:10px 12px;cursor:pointer;min-height:44px;text-decoration:underline}
+.back{background:none;border:0;color:var(--ac);font:inherit;font-weight:700;padding:8px 0;min-height:44px;cursor:pointer}
+.chips2{display:flex;flex-wrap:wrap;gap:10px}.chip{border:0;border-radius:999px;padding:12px 16px;font:inherit;font-weight:600;cursor:pointer;color:#fff;min-height:44px;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 80%,#fff),var(--c));box-shadow:0 3px 0 color-mix(in srgb,var(--c) 65%,#000)}
+.chip small{opacity:.85;margin-left:4px}.chip:active{transform:translateY(3px);box-shadow:none}
+@media (prefers-reduced-motion:reduce){.big:active,.sub:active,.row3:active,.chip:active{transform:none}}
 </style>
 </head>
 <body>
 <main id="app"></main>
 <script src="soal.js"></script>
+<script src="soal2.js"></script>
+<script src="soal3.js"></script>
 <script>
 if(typeof Q==="undefined"){document.getElementById("app").innerHTML="<p style=\"padding:20px\">Bank soal gagal dimuat. Periksa tanda baca di soal.js.</p>";throw new Error("Q")}
 const KISI={TWK:["Pancasila, UUD 1945, NKRI, Bhinneka Tunggal Ika","Nasionalisme, integritas, bela negara","Sejarah dan isu nasional"],TIU:["Verbal: sinonim, antonim, analogi","Numerik: deret, persen, perbandingan, soal cerita","Logika: silogisme dan penalaran analitis","Figural (soal gambar): belum ada di aplikasi ini"],TKP:["Pelayanan publik, jejaring kerja","Sosial budaya, teknologi informasi dan komunikasi","Profesionalisme, anti radikalisme"]};
@@ -99,29 +120,45 @@ const SHARE="";
 const url=()=>SHARE||location.href.split("#")[0];
 function waTo(text){window.open("https://wa.me/"+FEEDBACK+"?text="+encodeURIComponent(text),"_blank","noopener")}
 function wa(text){window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")}
+const SUB={TWK:{e:"🇮🇩",c:"#dc2626"},TIU:{e:"🧮",c:"#2563eb"},TKP:{e:"🤝",c:"#b45309"}};
+function hist(){try{return JSON.parse(localStorage.getItem("skd-hist")||"[]")}catch(e){return[]}}
+function addHist(l,p){try{const h=hist();h.unshift({l,p,d:new Date().toLocaleDateString("id-ID",{day:"numeric",month:"short"})});localStorage.setItem("skd-hist",JSON.stringify(h.slice(0,5)))}catch(e){}}
 function home(){
- app.innerHTML=`<section class="hero"><h1>Latihan SKD CPNS 2026</h1><p>Soal latihan TWK, TIU, dan TKP dengan pembahasan di setiap soal.</p><div class="chips"><span>${Q.length} soal</span><span>${nTop} tipe soal</span><span>Ada pembahasan</span></div></section>
- ${load()?`<button class="btn" id="rs"><b>Lanjutkan simulasi ${PACK[load().p].n}</b><br><span class="mut">Waktu ujian masih berjalan</span></button>`:""}${BAD.length?`<div class="warn"><b>Perhatian:</b> format soal nomor ${BAD.join(", ")} belum benar. Periksa file soal.</div>`:""}
- <h2>Pilih latihan</h2>
- <div class="card"><label class="lb" for="sel">Jenis latihan</label>
- <select id="sel" class="sel"><option value="ALL">Campuran: semua tipe A sampai Z</option>
- <optgroup label="Per subtes"><option value="TWK">TWK saja (${nQ("TWK")} soal)</option><option value="TIU">TIU saja (${nQ("TIU")} soal)</option><option value="TKP">TKP saja (${nQ("TKP")} soal)</option></optgroup>${grp("TIU","Fokus TIU (per tipe soal)")}${grp("TWK","Topik TWK")}${grp("TKP","Topik TKP")}
- ${PACK.length?`<optgroup label="Simulasi tryout (paket tetap)">${PACK.map((P,p)=>`<option value="P${p}">${P.n}: ${P.tw+P.ti+P.tk} soal, ${P.min} menit</option>`).join("")}</optgroup>`:""}</select>
- <label class="lb" for="cnt">Jumlah soal</label>
- <select id="cnt" class="sel"><option value="10">10 soal</option><option value="20" selected>20 soal</option><option value="30">30 soal</option><option value="0">Semua soal</option></select>
- <p class="mut" id="hint"></p><button class="btn pri" id="go">Mulai</button></div>
- <h2>Kisi-kisi materi</h2>
+ const r=load(),h=hist();
+ app.innerHTML=`<header class="hd"><div class="logo">SKD</div><div><h1>Latihan SKD CPNS</h1><p class="mut">${Q.length} soal · ${nTop} tipe · ada pembahasan</p></div></header>
+ ${BAD.length?`<div class="warn"><b>Perhatian:</b> format soal nomor ${BAD.join(", ")} belum benar.</div>`:""}
+ ${r?`<button class="big resume" id="rs"><span>Lanjutkan simulasi</span><small>${PACK[r.p].n}, waktu masih berjalan</small></button>`:""}
+ <button class="big" id="q10"><span>Mulai latihan</span><small>10 soal acak dari semua tipe</small></button>
+ <h2>Pilih subtes</h2>
+ <div class="g3">${Object.keys(SUB).map(k=>`<button class="sub" style="--c:${SUB[k].c}" data-k="${k}"><i>${SUB[k].e}</i><b>${k}</b><small>${nQ(k)} soal</small></button>`).join("")}</div>
+ <h2>Lainnya</h2>
+ ${PACK.map((P,p)=>`<button class="row3" data-p="${p}"><i>⏱</i><span><b>Simulasi ujian: ${P.n}</b><small>${P.tw+P.ti+P.tk} soal, ${P.min} menit, ada penghitung waktu</small></span><em>›</em></button>`).join("")}
+ <button class="row3" id="tp"><i>🎯</i><span><b>Latihan per topik</b><small>Sinonim, deret angka, silogisme, dan lainnya</small></span><em>›</em></button>
+ ${h.length?`<h2>Riwayat terakhir</h2><div class="card">${h.slice(0,3).map(x=>`<div class="row2"><span>${esc(x.l)} <small class="mut">${x.d}</small></span><b>${x.p}%</b></div>`).join("")}</div>`:""}
+ <div class="foot"><button class="lnk" id="inf">Kisi-kisi dan tentang</button><button class="lnk" id="sh">Bagikan ke WhatsApp</button>${FEEDBACK?`<button class="lnk" id="fbk">Kirim masukan</button>`:""}</div>`;
+ const $=id=>document.getElementById(id);
+ if($("rs"))$("rs").onclick=resume;
+ $("q10").onclick=()=>start("ALL",10);
+ app.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>start(b.dataset.k,10));
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>startCat(+b.dataset.p));
+ $("tp").onclick=topics;$("inf").onclick=info;
+ $("sh").onclick=()=>wa("Latihan soal SKD CPNS 2026 (TWK, TIU, TKP) dengan pembahasan: "+url());
+ if(FEEDBACK)$("fbk").onclick=()=>waTo("Masukan untuk Latihan SKD CPNS 2026:\n");
+ window.scrollTo(0,0);
+}
+function topics(){
+ const g=k=>{const ts=[...new Set(Q.filter(q=>q.k===k).map(q=>q.tp))];return `<h2>${SUB[k].e} ${k}</h2><div class="chips2">${ts.map(t=>`<button class="chip" style="--c:${SUB[k].c}" data-t="${esc(t)}">${esc(t)} <small>${Q.filter(q=>q.tp===t).length}</small></button>`).join("")}</div>`};
+ app.innerHTML=`<button class="back" id="bk">‹ Kembali</button><h1>Latihan per topik</h1><p class="mut">Pilih satu topik. Soal diacak, 10 per sesi.</p>${["TIU","TWK","TKP"].map(g).join("")}`;
+ document.getElementById("bk").onclick=home;
+ app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>start("T:"+b.dataset.t,10));
+ window.scrollTo(0,0);
+}
+function info(){
+ app.innerHTML=`<button class="back" id="bk">‹ Kembali</button><h1>Kisi-kisi dan tentang</h1>
  ${Object.keys(KISI).map(k=>`<details class="card"><summary><b>${k}</b> &nbsp;${NAMA[k]}</summary><ul>${KISI[k].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("")}
- <div class="note"><strong>Struktur SKD (acuan, bisa berubah tiap tahun):</strong> 110 soal dalam 100 menit (TWK 30, TIU 35, TKP 45). Ambang batas tahun-tahun sebelumnya: TWK 65, TIU 80, TKP 166. Angka dari laporan media, pastikan ke pengumuman resmi di SSCASN dan situs BKN. Aplikasi ini bukan aplikasi resmi BKN atau KemenPANRB, soalnya buatan sendiri, dan tidak menjamin kelulusan.</div>
- <details class="card"><summary><b>Tentang aplikasi</b></summary><p style="margin-top:8px">Aplikasi latihan mandiri, bukan aplikasi resmi BKN atau KemenPANRB. Soal dibuat sendiri dan belum tentu sama dengan soal asli. Tidak ada jaminan kelulusan. Aplikasi ini tidak meminta login dan tidak mengirim data pribadi ke server; progres simulasi hanya disimpan di perangkatmu. Tombol masukan membuka WhatsApp dengan pesan yang kamu kirim sendiri.</p></details>
- <button class="btn" id="sh">Bagikan aplikasi ke WhatsApp</button>${FEEDBACK?`<button class="btn" id="fbk">Kirim masukan ke pembuat</button>`:""}`;
- const sel=document.getElementById("sel"),cnt=document.getElementById("cnt"),hint=document.getElementById("hint");
- const upd=()=>{const v=sel.value,pk=v.startsWith("P");cnt.disabled=pk;if(pk){const P=PACK[+v.slice(1)];hint.textContent=`Paket tetap: ${P.tw+P.ti+P.tk} soal dalam ${P.min} menit. Soal dan waktu sama untuk semua peserta.`}else hint.textContent=v==="ALL"?"Soal diambil bergantian dari semua tipe (A sampai Z) supaya semua jenis terlatih.":"Soal diacak setiap kali mulai."};
- sel.onchange=upd;upd();
- document.getElementById("go").onclick=()=>{const v=sel.value;v.startsWith("P")?startCat(+v.slice(1)):start(v,+cnt.value)};
- if(document.getElementById("rs"))document.getElementById("rs").onclick=resume;
- document.getElementById("sh").onclick=()=>wa("Latihan soal SKD CPNS 2026 (TWK, TIU, TKP) dengan kisi-kisi dan pembahasan: "+url());
- if(FEEDBACK)document.getElementById("fbk").onclick=()=>waTo("Masukan untuk Latihan SKD CPNS 2026:\n");
+ <div class="note"><strong>Struktur SKD (acuan, bisa berubah tiap tahun):</strong> 110 soal dalam 100 menit (TWK 30, TIU 35, TKP 45). Ambang batas tahun-tahun sebelumnya: TWK 65, TIU 80, TKP 166. Angka dari laporan media, pastikan ke pengumuman resmi di SSCASN dan situs BKN.</div>
+ <div class="note">Aplikasi latihan mandiri, bukan aplikasi resmi BKN atau KemenPANRB. Soal dibuat sendiri dan belum tentu sama dengan soal asli. Tidak ada jaminan kelulusan. Tidak ada login, tidak ada data pribadi dikirim ke server; riwayat dan sesi simulasi hanya disimpan di perangkatmu.</div>`;
+ document.getElementById("bk").onclick=home;window.scrollTo(0,0);
 }
 function start(c,n){L=c==="ALL"?mix():shuf(c.startsWith("T:")?Q.filter(q=>q.tp===c.slice(2)):Q.filter(q=>q.k===c));if(n>0)L=L.slice(0,n);i=0;sc={TWK:0,TIU:0,TKP:0};mx={TWK:0,TIU:0,TKP:0};ans=null;show()}
 function show(){
@@ -145,7 +182,7 @@ function pick(j){
 }
 function fin(){
  const ks=["TWK","TIU","TKP"].filter(k=>mx[k]>0),tot=ks.reduce((a,k)=>a+sc[k],0),tm=ks.reduce((a,k)=>a+mx[k],0);
- const pct=Math.round(tot/tm*100),line=ks.map(k=>`${k} ${sc[k]}/${mx[k]}`).join(", ");
+ const pct=Math.round(tot/tm*100);addHist("Latihan "+L.length+" soal",pct);const line=ks.map(k=>`${k} ${sc[k]}/${mx[k]}`).join(", ");
  const msg=pct>=80?"Hasil sangat baik. Pertahankan ritme latihanmu.":pct>=60?"Cukup baik. Pelajari ulang bagian yang masih salah.":"Masih perlu banyak latihan. Ulangi materi dasarnya dulu.";
  app.innerHTML=`<h1>Hasil latihan</h1>
  <div class="card"><div class="ring"><svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Skor ${pct} persen"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bd)" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ac)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(pct*3.267).toFixed(1)} 400" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-size="26" font-weight="700" fill="var(--fg)">${pct}%</text></svg></div>
@@ -205,7 +242,7 @@ function catFin(){
  clearInterval(tmr);drop();
  const S={TWK:[0,0],TIU:[0,0],TKP:[0,0]};
  C.qs.forEach(k=>{const q=Q[k];S[q.k][1]+=Math.max(...q.o.map(o=>o.p));if(C.ans[k]!==undefined)S[q.k][0]+=q.o[C.ans[k]].p});
- const ks=Object.keys(S).filter(x=>S[x][1]>0),tot=ks.reduce((a,x)=>a+S[x][0],0),mxs=ks.reduce((a,x)=>a+S[x][1],0),pct=Math.round(tot/mxs*100);
+ const ks=Object.keys(S).filter(x=>S[x][1]>0),tot=ks.reduce((a,x)=>a+S[x][0],0),mxs=ks.reduce((a,x)=>a+S[x][1],0),pct=Math.round(tot/mxs*100);addHist(PACK[C.p].n,pct);
  const na=C.qs.filter(k=>C.ans[k]===undefined).length,line=ks.map(x=>`${x} ${S[x][0]}/${S[x][1]}`).join(", ");
  app.innerHTML=`<h1>Hasil ${PACK[C.p].n}</h1>
  <div class="card"><div class="ring">${ringSvg(pct)}</div><p style="text-align:center;margin:0 0 6px"><strong>${tot} dari ${mxs} poin</strong></p><p class="mut" style="text-align:center">${na} soal tidak dijawab.</p>
