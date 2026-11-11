@@ -1,6 +1,6 @@
 // Naikkan angka versi ini setiap kali kamu mengganti index.html agar HP mengambil versi baru.
-const V = "skd-v1";
-const FILES = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
+const V = "skd-v3";
+const FILES = ["./", "index.html", "soal.js", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(V).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
