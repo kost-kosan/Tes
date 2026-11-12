@@ -4,7 +4,7 @@
   if(!ok)return;var cur=null;
   function reset(){if(cur){cur.style.transform='';cur=null}}
   document.addEventListener('pointermove',function(e){
-    var t=e.target.closest&&e.target.closest('.cat,.info');
+    var t=e.target.closest&&e.target.closest('.cat,.info,.q');
     if(cur&&cur!==t)reset();if(!t)return;cur=t;
     var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
     t.style.transform='perspective(800px) rotateX('+(-y*7).toFixed(2)+'deg) rotateY('+(x*9).toFixed(2)+'deg) translateY(-3px)';
