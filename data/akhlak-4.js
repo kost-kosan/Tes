@@ -1,0 +1,11 @@
+/* Bank soal AKHLAK - tambahan */
+Bank.add("AKHLAK",[
+{"t": "N", "q": "Kamu menemukan celah keamanan pada sistem layanan pelanggan. Sikapmu…", "o": ["Memberi tahu pihak luar", "Memanfaatkannya", "Segera melapor ke tim terkait disertai bukti dan usulan perbaikan", "Membiarkannya"], "a": [1, 1, 5, 2], "e": "Amanah dan kompeten."},
+{"t": "N", "q": "Dua divisi memiliki target yang saling bertentangan. Sikapmu…", "o": ["Mengabaikan target salah satu", "Mengutamakan divisiku", "Mengajak kedua divisi berdiskusi untuk menyelaraskan target", "Menunggu atasan memutuskan tanpa memberi masukan"], "a": [1, 2, 5, 3], "e": "Kolaboratif."},
+{"t": "N", "q": "Pelanggan memuji layananmu padahal itu hasil kerja banyak orang. Sikapmu…", "o": ["Menyalahkan tim bila ada masalah nanti", "Menyampaikan terima kasih dan menyebut kontribusi tim", "Mengabaikan pujian", "Menerima pujian sendirian"], "a": [1, 5, 3, 1], "e": "Harmonis."},
+{"t": "N", "q": "Perusahaan mengubah prosedur dan kamu belum memahaminya. Sikapmu…", "o": ["Memakai prosedur lama", "Bertanya, mempelajari panduan, dan menerapkannya dengan benar", "Menebak prosedur baru", "Menunggu rekan menjelaskan"], "a": [1, 5, 2, 3], "e": "Adaptif."},
+{"t": "N", "q": "Kamu diminta memberi data kepada pihak luar tanpa surat resmi. Sikapmu…", "o": ["Memberi data demi hubungan baik", "Menolak dan meminta prosedur resmi sesuai kebijakan keamanan data", "Memberi sebagian data", "Memberi lalu melapor belakangan"], "a": [1, 5, 2, 3], "e": "Amanah menjaga data."},
+{"t": "N", "q": "Rekan kerja tampak kelelahan karena beban kerja berlebih. Sikapmu…", "o": ["Menertawakannya", "Menambah beban kerjanya", "Membiarkannya", "Menawarkan bantuan dan menyampaikan kondisi tim kepada atasan"], "a": [1, 1, 2, 5], "e": "Harmonis dan peduli."},
+{"t": "N", "q": "Pelanggan memberi saran perbaikan layanan. Sikapmu…", "o": ["Menyalahkan pelanggan", "Mengabaikannya", "Mencatat, mengevaluasi, dan menindaklanjuti saran yang relevan", "Menyimpannya saja"], "a": [1, 2, 5, 3], "e": "Melayani dan adaptif."},
+{"t": "N", "q": "Prosedur keselamatan kerja tidak dijalankan di lapangan. Sikapmu…", "o": ["Mengambil foto untuk dipamerkan", "Mengingatkan dan melapor agar segera diperbaiki", "Ikut mengabaikan", "Menunggu terjadi kecelakaan"], "a": [2, 5, 1, 2], "e": "Amanah: keselamatan kerja."}
+]);

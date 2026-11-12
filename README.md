@@ -1,38 +1,43 @@
-# Latihan SKD CPNS 2026: pasang di GitHub Pages (gratis, tanpa build)
+# Latihan SKD CPNS dan BUMN
 
-Folder ini sudah siap pakai. Isinya 7 berkas yang semuanya diletakkan di folder paling luar (tanpa subfolder), jadi mudah diunggah dari HP:
+Aplikasi web latihan soal (TWK, TIU, TKP, BUMN TKD dan AKHLAK) dengan pembahasan, evaluasi materi, timer,
+login, dan bisa dipasang ke layar utama HP serta dibuka offline.
 
-- `index.html` (aplikasi)
-- `soal.js` (bank soal; di sinilah kamu menambah soal)
-- `manifest.webmanifest` (data pemasangan sebagai aplikasi)
-- `sw.js` (membuat aplikasi tetap jalan saat sinyal jelek atau offline)
-- `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (ikon)
+## Struktur folder
+```
+index.html              halaman utama (memuat css dan js)
+manifest.webmanifest    pengaturan aplikasi terpasang (nama, ikon, warna)
+sw.js                   service worker (offline). Naikkan VERSI di dalamnya tiap file berubah
+404.html  robots.txt  _headers
+css/style.css           komponen dan tampilan 3D
+css/theme.css           warna merek (mode terang)
+css/futuristic.css      tema futuristik 3D (neon, kaca, grid). Ubah warna di blok :root:root
+js/config.js            nama aplikasi dan pengaturan login
+js/bank.js              registri bank soal
+js/auth.js              login / daftar / keluar
+js/topics.js            materi belajar per topik
+js/app.js               logika latihan, skor, evaluasi
+js/modes.js             mode Per Topik dan Simulasi CAT (110 soal, 100 menit)
+js/fx.js                efek miring 3D kartu (hanya mouse)
+js/pwa.js               pendaftaran service worker
+data/*.js               bank soal per jenis (tambah soal di sini)
+img/                    ikon
+docs/                   TAMBAH-SOAL.md, LOGIN.md, KEAMANAN.md
+```
 
-## Langkah
+## Pasang online (gratis)
+- **Netlify**: buka app.netlify.com/drop dan seret SELURUH isi folder ini. File `_headers` otomatis aktif.
+- **GitHub Pages**: dari browser komputer, seret SELURUH isi folder ke halaman Upload files (pastikan folder
+  css, js, data, img ikut), lalu Settings, Pages, Deploy from a branch, main, root.
 
-1. Buat akun di github.com (gratis), lalu buat repositori baru dengan **Public** (nama bebas, misalnya `skd-cpns`).
-2. Di repositori itu, pilih **Add file, lalu Upload files**, pilih ketujuh berkas di atas, lalu klik **Commit changes**.
-3. Buka **Settings, lalu Pages**. Pada Source pilih **Deploy from a branch**, Branch `main`, folder `/ (root)`, lalu **Save**.
-4. Tunggu 1 sampai 3 menit. Link-nya berbentuk `https://NAMA-GITHUB-MU.github.io/NAMA-REPO/`. Buka link itu di browser untuk memastikan aplikasinya tampil.
-5. **Pasang di HP (Android, Chrome):** buka link, lalu menu titik tiga, pilih **Pasang aplikasi** atau **Tambahkan ke layar utama** (nama menu bisa sedikit berbeda). Ikonnya muncul di layar utama dan aplikasi terbuka seperti aplikasi biasa. Di iPhone, buka di Safari lalu pilih **Bagikan, lalu Tambah ke Layar Utama**.
-6. **Bagikan:** kirim link tadi ke WhatsApp. Tombol bagikan di dalam aplikasi otomatis memakai alamat link itu.
+## Bank soal
+Isi dasar sekitar 2.090 soal. Tambah soal dengan menyalin satu baris di folder `data/` (lihat docs/TAMBAH-SOAL.md).
+Setelah mengubah file apa pun, naikkan angka VERSI di sw.js (contoh skd-v3) supaya pengguna mendapat pembaruan.
 
-## Mengaktifkan tombol masukan (opsional)
+Catatan: soal adalah bahan latihan, bukan soal asli ujian.
 
-Buka `index.html` di GitHub, klik ikon pensil, cari baris `const FEEDBACK="";`, isi nomor WhatsApp-mu dengan format `628xxxxxxxxxx`, lalu commit. Tombol "Kirim masukan" dan "Laporkan soal" akan muncul.
-
-## Menambah soal
-
-Buka `soal.js` di GitHub, klik ikon pensil, tambahkan baris soal baru, lalu commit. Format dan contohnya ada di bagian atas `soal.js` dan di file CARA-TAMBAH-SOAL. Pilihan latihan di aplikasi (dropdown) dan jumlah paket tryout ikut bertambah otomatis.
-
-## Memperbarui aplikasi
-
-1. Ganti `index.html` atau `soal.js` (edit atau unggah ulang).
-2. Buka `sw.js` dan naikkan angka versi pada baris `const V = "skd-v1";` (misalnya `skd-v2`). Tanpa ini, HP yang sudah memasang bisa tetap menampilkan versi lama.
-
-## Catatan
-
-- Ini aplikasi web yang bisa dipasang (PWA), bukan berkas APK. Untuk berkas APK sungguhan atau Play Store, pakai paket `latihan-skd-apk` yang terpisah.
-- Aplikasi tidak meminta login dan tidak mengirim data pribadi ke server. Progres simulasi disimpan di perangkat.
-- Sudah diuji di komputer dengan server lokal: manifest dan ikon terbaca, serta aplikasi tetap bisa dibuka dan dipakai saat offline. Belum diuji langsung di HP dan di alamat github.io.
-- Pastikan teks "bukan aplikasi resmi BKN dan tidak menjamin kelulusan" tetap ada.
+## Mode
+- Latihan: pilih TWK/TIU/TKP/Campuran/BUMN lalu sesi, dengan pembahasan langsung.
+- Per Topik: latih satu topik (misalnya Numerik atau Pelayanan Publik), sesi sekitar 20 soal.
+- Simulasi CAT: paket 110 soal (30 TWK, 35 TIU, 45 TKP), 100 menit, navigator soal, tanda ragu-ragu, hasil di akhir.
+  Jumlah paket otomatis menyesuaikan bank soal (maksimal 8). Ubah jumlah/komposisi di js/modes.js (CATQ, CATMIN).

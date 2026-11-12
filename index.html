@@ -1,268 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f766e">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Latihan SKD CPNS dan BUMN</title>
+<meta name="description" content="Latihan soal SKD CPNS dan BUMN: TWK, TIU, TKP, dan AKHLAK dengan pembahasan.">
+<meta name="theme-color" content="#060a18">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Latihan SKD CPNS 2026</title>
-<style>
-:root{--bg:#f2f5f3;--fg:#13201d;--mut:#586966;--card:#fff;--ac:#0f766e;--acfg:#fff;--tint:#e4f2ef;--bad:#b42318;--okbg:#e4f5ec;--nobg:#fdecea;--bd:#dfe7e4;--sh:0 1px 2px rgba(16,40,35,.06),0 8px 24px rgba(16,40,35,.07);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1514;--fg:#e6f0ed;--mut:#9bb0ab;--card:#16201f;--ac:#2dd4bf;--acfg:#032a25;--tint:#143230;--bad:#ff8f84;--okbg:#10301f;--nobg:#3a1714;--bd:#26393a;--sh:none;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1514;--fg:#e6f0ed;--mut:#9bb0ab;--card:#16201f;--ac:#2dd4bf;--acfg:#032a25;--tint:#143230;--bad:#ff8f84;--okbg:#10301f;--nobg:#3a1714;--bd:#26393a;--sh:none;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-main{max-width:600px;margin:0 auto;padding:16px 16px 40px;animation:in .25s ease-out}
-@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){main{animation:none}.btn,.tile{transition:none!important}}
-h1{font-size:1.65rem;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
-h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:26px 0 10px}
-p{margin:0 0 10px}.mut{color:var(--mut);font-size:.9rem}
-.hero{background:linear-gradient(135deg,#0f766e,#134e4a);color:#fff;border-radius:22px;padding:24px 20px;box-shadow:var(--sh);margin-bottom:14px}
-.hero p{opacity:.92;margin:0 0 14px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:rgba(255,255,255,.16);border-radius:999px;padding:4px 12px;font-size:.85rem}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;margin:10px 0;box-shadow:var(--sh)}
-details.card summary{cursor:pointer;min-height:28px;list-style:none}details.card summary::-webkit-details-marker{display:none}
-details.card summary::after{content:"+";float:right;color:var(--mut);font-weight:700}details[open].card summary::after{content:"\2212"}
-.note{font-size:.88rem;color:var(--mut);background:var(--tint);border-radius:14px;padding:12px 14px;margin:16px 0}
-.btn{display:block;width:100%;min-height:52px;margin:10px 0;padding:13px 16px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;text-align:left;cursor:pointer;box-shadow:var(--sh);transition:transform .08s,border-color .15s}
-.btn:active{transform:scale(.985)}.btn:focus-visible,.tile:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
-.btn.pri{background:var(--ac);color:var(--acfg);border-color:var(--ac);text-align:center;font-weight:700;font-size:1.05rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.tile{min-height:92px;border-radius:16px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;cursor:pointer;box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .08s}
-.tile:active{transform:scale(.97)}.tile b{font-size:1.25rem;color:var(--ac)}.tile span{font-size:.82rem;color:var(--mut)}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.tag{display:inline-block;font-size:.8rem;font-weight:700;background:var(--tint);color:var(--ac);border-radius:8px;padding:2px 10px}
-.bar{height:8px;background:var(--bd);border-radius:4px;margin:0 0 18px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);border-radius:4px;transition:width .3s}
-.q{font-size:1.1rem;font-weight:600;line-height:1.5;margin:0 0 14px}
-.opt{display:flex;gap:12px;align-items:flex-start;line-height:1.45}
-.opt .l{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--ac);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
-.opt.ok{background:var(--okbg);border:2px solid var(--ac)}.opt.no{background:var(--nobg);border:2px solid var(--bad)}
-.opt.ok .l{background:var(--ac);color:var(--acfg);font-size:0}.opt.ok .l::after{content:"\2713";font-size:1rem}
-.opt.no .l{background:var(--bad);color:#fff;font-size:0}.opt.no .l::after{content:"\2715";font-size:.95rem}
-#nx{position:sticky;bottom:12px}
-.ring{display:flex;justify-content:center;margin:8px 0 4px}
-.row2{display:flex;justify-content:space-between;font-size:.92rem;margin:12px 0 4px}
-ul{margin:8px 0 0;padding-left:20px}
-.row{display:flex;gap:8px}.row .btn{flex:1;text-align:center;padding:10px 6px}
-.opt.sel{background:var(--tint);border:2px solid var(--ac)}
-.tm{font-variant-numeric:tabular-nums;font-size:1.15rem;background:var(--tint);color:var(--ac);border-radius:10px;padding:2px 12px}
-.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;margin-bottom:8px}
-.nb{min-height:44px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;cursor:pointer}
-.nb.done{background:var(--ac);color:var(--acfg);border-color:var(--ac)}
-.nb.flg{outline:3px solid #d97706;outline-offset:-3px}
-.nb.cur{box-shadow:0 0 0 3px var(--fg)}
-.btn.opt{border:2px solid var(--bd);align-items:center}
-.btn.opt.ok,.btn.opt.sel{border-color:var(--ac)}
-.opt.sel .l{background:var(--ac);color:var(--acfg)}.btn.opt.no{border-color:var(--bad)}
-.sel{display:block;width:100%;min-height:52px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;padding:0 12px;margin:6px 0 14px}
-.sel:disabled{opacity:.5}.sel:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
-.lb{display:block;font-size:.85rem;color:var(--mut);font-weight:600}
-.warn{background:var(--nobg);color:var(--fg);border-radius:14px;padding:12px 14px;margin:12px 0;font-size:.9rem}
-
-:root{--card2:#eef3f1;--edge:#c5d3ce;--edge2:#0a4f49}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card2:#121b1a;--edge:#080d0c;--edge2:#17877a}}
-:root[data-theme="dark"]{--card2:#121b1a;--edge:#080d0c;--edge2:#17877a}
-.btn,.tile,.card{background:linear-gradient(180deg,var(--card),var(--card2));box-shadow:0 1px 0 rgba(255,255,255,.65) inset,0 4px 0 var(--edge),0 12px 22px rgba(16,40,35,.10)}
-.card{box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 3px 0 var(--edge),0 16px 30px rgba(16,40,35,.09)}
-.btn:active,.tile:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(255,255,255,.65) inset,0 1px 0 var(--edge),0 3px 6px rgba(16,40,35,.10)}
-.btn.pri{background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 82%,#fff),var(--ac));border-color:var(--ac);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 5px 0 var(--edge2),0 14px 24px rgba(15,118,110,.30)}
-.btn.pri:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 1px 0 var(--edge2),0 4px 8px rgba(15,118,110,.25)}
-.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 10%,rgba(255,255,255,.22),transparent 45%),linear-gradient(135deg,#128f83,#0f766e 45%,#134e4a);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 6px 0 #0a3f3a,0 18px 32px rgba(10,63,58,.35)}
-.hero>*{position:relative;z-index:1}
-.hero::after{content:"";position:absolute;right:-34px;bottom:-46px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.5),rgba(255,255,255,.06) 62%);box-shadow:inset -14px -18px 32px rgba(0,0,0,.28)}
-.hero::before{content:"";position:absolute;right:92px;top:-26px;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.45),rgba(255,255,255,.05) 62%);box-shadow:inset -8px -10px 18px rgba(0,0,0,.25)}
-.opt .l{background:linear-gradient(180deg,var(--card),var(--tint));box-shadow:0 2px 0 var(--edge),0 1px 0 rgba(255,255,255,.6) inset}
-.nb{box-shadow:0 3px 0 var(--edge)}.nb:active{transform:translateY(2px);box-shadow:0 1px 0 var(--edge)}
-.tm{box-shadow:0 3px 0 var(--edge)}
-.tag{box-shadow:0 2px 0 var(--edge)}
-@media (prefers-reduced-motion:reduce){.btn:active,.tile:active,.nb:active{transform:none}}
-
-.hd{display:flex;gap:14px;align-items:center;margin:4px 0 18px}.hd h1{margin:0;font-size:1.35rem}.hd p{margin:0}
-.logo{width:56px;height:56px;flex:none;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#14998c,#0f766e);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 4px 0 #0a4f49,0 10px 18px rgba(15,118,110,.3)}
-.big{display:block;width:100%;text-align:left;border:0;border-radius:22px;padding:22px 20px;margin:12px 0;font:inherit;cursor:pointer;color:#fff;background:linear-gradient(135deg,#14998c,#0f766e 55%,#134e4a);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 6px 0 #0a3f3a,0 18px 30px rgba(10,63,58,.3);transition:transform .08s,box-shadow .08s}
-.big span{display:block;font-size:1.4rem;font-weight:800}.big small{display:block;opacity:.92;font-size:.92rem;margin-top:2px}
-.big:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 2px 0 #0a3f3a,0 6px 10px rgba(10,63,58,.3)}
-.big.resume{background:linear-gradient(135deg,#f59e0b,#b45309);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 6px 0 #78350f,0 16px 26px rgba(120,53,15,.3)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.sub{border:0;border-radius:20px;padding:16px 6px 14px;font:inherit;cursor:pointer;color:#fff;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 80%,#fff),var(--c));box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 5px 0 color-mix(in srgb,var(--c) 65%,#000),0 12px 20px rgba(0,0,0,.14);display:flex;flex-direction:column;align-items:center;gap:2px}
-.sub i{font-style:normal;font-size:1.8rem;line-height:1.2}.sub b{font-size:1.1rem}.sub small{opacity:.92}
-.sub:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 1px 0 color-mix(in srgb,var(--c) 65%,#000)}
-.row3{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:var(--fg);cursor:pointer;border:1px solid var(--bd);border-radius:18px;padding:14px 16px;margin:10px 0;background:linear-gradient(180deg,var(--card),var(--card2));box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 4px 0 var(--edge),0 10px 18px rgba(16,40,35,.08)}
-.row3 i{font-style:normal;font-size:1.6rem}.row3 span{flex:1}.row3 b{display:block}.row3 small{display:block;color:var(--mut)}.row3 em{font-style:normal;font-size:1.6rem;color:var(--mut)}
-.row3:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
-.foot{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:22px}.lnk{background:none;border:0;color:var(--ac);font:inherit;font-weight:600;padding:10px 12px;cursor:pointer;min-height:44px;text-decoration:underline}
-.back{background:none;border:0;color:var(--ac);font:inherit;font-weight:700;padding:8px 0;min-height:44px;cursor:pointer}
-.chips2{display:flex;flex-wrap:wrap;gap:10px}.chip{border:0;border-radius:999px;padding:12px 16px;font:inherit;font-weight:600;cursor:pointer;color:#fff;min-height:44px;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 80%,#fff),var(--c));box-shadow:0 3px 0 color-mix(in srgb,var(--c) 65%,#000)}
-.chip small{opacity:.85;margin-left:4px}.chip:active{transform:translateY(3px);box-shadow:none}
-@media (prefers-reduced-motion:reduce){.big:active,.sub:active,.row3:active,.chip:active{transform:none}}
-</style>
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/futuristic.css">
 </head>
 <body>
-<main id="app"></main>
-<script src="soal.js"></script>
-<script src="soal2.js"></script>
-<script src="soal3.js"></script>
-<script>
-if(typeof Q==="undefined"){document.getElementById("app").innerHTML="<p style=\"padding:20px\">Bank soal gagal dimuat. Periksa tanda baca di soal.js.</p>";throw new Error("Q")}
-const KISI={TWK:["Pancasila, UUD 1945, NKRI, Bhinneka Tunggal Ika","Nasionalisme, integritas, bela negara","Sejarah dan isu nasional"],TIU:["Verbal: sinonim, antonim, analogi","Numerik: deret, persen, perbandingan, soal cerita","Logika: silogisme dan penalaran analitis","Figural (soal gambar): belum ada di aplikasi ini"],TKP:["Pelayanan publik, jejaring kerja","Sosial budaya, teknologi informasi dan komunikasi","Profesionalisme, anti radikalisme"]};
-const NAMA={TWK:"Tes Wawasan Kebangsaan",TIU:"Tes Intelegensia Umum",TKP:"Tes Karakteristik Pribadi"};
-const app=document.getElementById("app");
-const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
-const nQ=k=>Q.filter(q=>q.k===k).length;
-// Isi dengan nomor WhatsApp-mu (format 628xxxxxxxxxx) agar tombol masukan muncul.
-const FEEDBACK="";
-let L=[],i=0,sc,mx,ans;
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
-// Isi SHARE dengan link unduh APK (mis. halaman Releases GitHub) setelah APK jadi.
-const SHARE="";
-const url=()=>SHARE||location.href.split("#")[0];
-function waTo(text){window.open("https://wa.me/"+FEEDBACK+"?text="+encodeURIComponent(text),"_blank","noopener")}
-function wa(text){window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")}
-const SUB={TWK:{e:"🇮🇩",c:"#dc2626"},TIU:{e:"🧮",c:"#2563eb"},TKP:{e:"🤝",c:"#b45309"}};
-function hist(){try{return JSON.parse(localStorage.getItem("skd-hist")||"[]")}catch(e){return[]}}
-function addHist(l,p){try{const h=hist();h.unshift({l,p,d:new Date().toLocaleDateString("id-ID",{day:"numeric",month:"short"})});localStorage.setItem("skd-hist",JSON.stringify(h.slice(0,5)))}catch(e){}}
-function home(){
- const r=load(),h=hist();
- app.innerHTML=`<header class="hd"><div class="logo">SKD</div><div><h1>Latihan SKD CPNS</h1><p class="mut">${Q.length} soal · ${nTop} tipe · ada pembahasan</p></div></header>
- ${BAD.length?`<div class="warn"><b>Perhatian:</b> format soal nomor ${BAD.join(", ")} belum benar.</div>`:""}
- ${r?`<button class="big resume" id="rs"><span>Lanjutkan simulasi</span><small>${PACK[r.p].n}, waktu masih berjalan</small></button>`:""}
- <button class="big" id="q10"><span>Mulai latihan</span><small>10 soal acak dari semua tipe</small></button>
- <h2>Pilih subtes</h2>
- <div class="g3">${Object.keys(SUB).map(k=>`<button class="sub" style="--c:${SUB[k].c}" data-k="${k}"><i>${SUB[k].e}</i><b>${k}</b><small>${nQ(k)} soal</small></button>`).join("")}</div>
- <h2>Lainnya</h2>
- ${PACK.map((P,p)=>`<button class="row3" data-p="${p}"><i>⏱</i><span><b>Simulasi ujian: ${P.n}</b><small>${P.tw+P.ti+P.tk} soal, ${P.min} menit, ada penghitung waktu</small></span><em>›</em></button>`).join("")}
- <button class="row3" id="tp"><i>🎯</i><span><b>Latihan per topik</b><small>Sinonim, deret angka, silogisme, dan lainnya</small></span><em>›</em></button>
- ${h.length?`<h2>Riwayat terakhir</h2><div class="card">${h.slice(0,3).map(x=>`<div class="row2"><span>${esc(x.l)} <small class="mut">${x.d}</small></span><b>${x.p}%</b></div>`).join("")}</div>`:""}
- <div class="foot"><button class="lnk" id="inf">Kisi-kisi dan tentang</button><button class="lnk" id="sh">Bagikan ke WhatsApp</button>${FEEDBACK?`<button class="lnk" id="fbk">Kirim masukan</button>`:""}</div>`;
- const $=id=>document.getElementById(id);
- if($("rs"))$("rs").onclick=resume;
- $("q10").onclick=()=>start("ALL",10);
- app.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>start(b.dataset.k,10));
- app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>startCat(+b.dataset.p));
- $("tp").onclick=topics;$("inf").onclick=info;
- $("sh").onclick=()=>wa("Latihan soal SKD CPNS 2026 (TWK, TIU, TKP) dengan pembahasan: "+url());
- if(FEEDBACK)$("fbk").onclick=()=>waTo("Masukan untuk Latihan SKD CPNS 2026:\n");
- window.scrollTo(0,0);
-}
-function topics(){
- const g=k=>{const ts=[...new Set(Q.filter(q=>q.k===k).map(q=>q.tp))];return `<h2>${SUB[k].e} ${k}</h2><div class="chips2">${ts.map(t=>`<button class="chip" style="--c:${SUB[k].c}" data-t="${esc(t)}">${esc(t)} <small>${Q.filter(q=>q.tp===t).length}</small></button>`).join("")}</div>`};
- app.innerHTML=`<button class="back" id="bk">‹ Kembali</button><h1>Latihan per topik</h1><p class="mut">Pilih satu topik. Soal diacak, 10 per sesi.</p>${["TIU","TWK","TKP"].map(g).join("")}`;
- document.getElementById("bk").onclick=home;
- app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>start("T:"+b.dataset.t,10));
- window.scrollTo(0,0);
-}
-function info(){
- app.innerHTML=`<button class="back" id="bk">‹ Kembali</button><h1>Kisi-kisi dan tentang</h1>
- ${Object.keys(KISI).map(k=>`<details class="card"><summary><b>${k}</b> &nbsp;${NAMA[k]}</summary><ul>${KISI[k].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("")}
- <div class="note"><strong>Struktur SKD (acuan, bisa berubah tiap tahun):</strong> 110 soal dalam 100 menit (TWK 30, TIU 35, TKP 45). Ambang batas tahun-tahun sebelumnya: TWK 65, TIU 80, TKP 166. Angka dari laporan media, pastikan ke pengumuman resmi di SSCASN dan situs BKN.</div>
- <div class="note">Aplikasi latihan mandiri, bukan aplikasi resmi BKN atau KemenPANRB. Soal dibuat sendiri dan belum tentu sama dengan soal asli. Tidak ada jaminan kelulusan. Tidak ada login, tidak ada data pribadi dikirim ke server; riwayat dan sesi simulasi hanya disimpan di perangkatmu.</div>`;
- document.getElementById("bk").onclick=home;window.scrollTo(0,0);
-}
-function start(c,n){L=c==="ALL"?mix():shuf(c.startsWith("T:")?Q.filter(q=>q.tp===c.slice(2)):Q.filter(q=>q.k===c));if(n>0)L=L.slice(0,n);i=0;sc={TWK:0,TIU:0,TKP:0};mx={TWK:0,TIU:0,TKP:0};ans=null;show()}
-function show(){
- const q=L[i];ans=null;
- app.innerHTML=`<div class="top"><span class="tag">${q.k}</span><span class="mut">${i+1} / ${L.length}</span></div><div class="bar"><i style="width:${i/L.length*100}%"></i></div>
- <p class="q">${esc(q.q)}</p>
- ${q.o.map((o,j)=>`<button class="btn opt" data-j="${j}"><span class="l">${String.fromCharCode(65+j)}</span><span>${esc(o.t)}</span></button>`).join("")}
- <div id="fb"></div>`;
- app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.j));
- window.scrollTo(0,0);
-}
-function pick(j){
- if(ans!==null)return;ans=j;const q=L[i],best=Math.max(...q.o.map(o=>o.p));
- sc[q.k]+=q.o[j].p;mx[q.k]+=best;
- app.querySelectorAll(".opt").forEach((b,x)=>{if(q.o[x].p===best)b.classList.add("ok");else if(x===j)b.classList.add("no")});
- document.getElementById("fb").innerHTML=`<div class="card"><strong>Poin: ${q.o[j].p} dari ${best}</strong><p style="margin:6px 0 0">${esc(q.e)}</p></div>
- <button class="btn" id="sq">Bagikan soal ini ke WhatsApp</button>${FEEDBACK?`<button class="btn" id="rp">Laporkan soal atau jawaban ini</button>`:""}<button class="btn pri" id="nx">${i+1<L.length?"Soal berikutnya":"Lihat hasil"}</button>`;
- document.getElementById("nx").onclick=()=>{i++;i<L.length?show():fin()};
- if(FEEDBACK)document.getElementById("rp").onclick=()=>waTo("Laporan soal ("+q.k+"):\n"+q.q+"\nJawaban saya: "+q.o[j].t+"\nCatatan: ");
- document.getElementById("sq").onclick=()=>wa("Coba jawab soal latihan SKD CPNS ini:\n\n"+q.q+"\n"+q.o.map((o,x)=>String.fromCharCode(65+x)+". "+o.t).join("\n")+"\n\nLebih banyak soal: "+url());
-}
-function fin(){
- const ks=["TWK","TIU","TKP"].filter(k=>mx[k]>0),tot=ks.reduce((a,k)=>a+sc[k],0),tm=ks.reduce((a,k)=>a+mx[k],0);
- const pct=Math.round(tot/tm*100);addHist("Latihan "+L.length+" soal",pct);const line=ks.map(k=>`${k} ${sc[k]}/${mx[k]}`).join(", ");
- const msg=pct>=80?"Hasil sangat baik. Pertahankan ritme latihanmu.":pct>=60?"Cukup baik. Pelajari ulang bagian yang masih salah.":"Masih perlu banyak latihan. Ulangi materi dasarnya dulu.";
- app.innerHTML=`<h1>Hasil latihan</h1>
- <div class="card"><div class="ring"><svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Skor ${pct} persen"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bd)" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ac)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(pct*3.267).toFixed(1)} 400" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-size="26" font-weight="700" fill="var(--fg)">${pct}%</text></svg></div>
- <p style="text-align:center;margin:0 0 6px"><strong>${tot} dari ${tm} poin</strong></p><p class="mut" style="text-align:center">${msg}</p>
- ${ks.map(k=>`<div class="row2"><span>${k}</span><span>${sc[k]} / ${mx[k]}</span></div><div class="bar" style="margin:0"><i style="width:${sc[k]/mx[k]*100}%"></i></div>`).join("")}</div>
- <p class="mut">Ini latihan mini, jadi skornya bukan prediksi nilai SKD sebenarnya.</p>
- <button class="btn pri" id="sr">Bagikan hasil ke WhatsApp</button><button class="btn" id="ag">Latihan lagi</button>`;
- document.getElementById("sr").onclick=()=>wa("Hasil latihan SKD CPNS 2026 saya: "+line+". Coba juga: "+url());
- document.getElementById("ag").onclick=home;
- window.scrollTo(0,0);
-}
-const topikOf=q=>{const s=q.q;
- if(q.k==="TIU")return /^(Sinonim|Antonim)/i.test(s)?"Sinonim dan antonim":/ : .*=\s*\S*\s*\.\.\.$|= .*\.\.\.$/.test(s)&&s.includes(" : ")?"Analogi":/deret/i.test(s)?"Deret angka":/Semua|Jika|lebih tinggi/.test(s)?"Logika dan silogisme":"Hitungan dan persen";
- if(q.k==="TWK")return /Pasal|UUD|Pembukaan|MPR|Mahkamah|Badan|Lembaga|Ketentuan/.test(s)?"UUD 1945 dan lembaga negara":/Pancasila|sila|Garuda|Bhinneka|BerAKHLAK|Nilai|Sikap/.test(s)?"Pancasila dan nilai":"Sejarah nasional";
- return /warga|pemohon|layanan|antre|lansia/i.test(s)?"Pelayanan publik":/email|aplikasi|video call|hoaks|data pribadi/i.test(s)?"TIK dan literasi digital":/menolak Pancasila|ujaran/i.test(s)?"Anti radikalisme":/rekan|tim|unit|pujian|generasi|daerah lain/i.test(s)?"Jejaring kerja":"Profesionalisme"};
-Q.forEach(q=>{q.tp=q.tp||topikOf(q)});
-const nTop=new Set(Q.map(q=>q.tp)).size;
-const grp=(k,l)=>{const ts=[...new Set(Q.filter(q=>q.k===k).map(q=>q.tp))];return `<optgroup label="${l}">${ts.map(t=>`<option value="T:${t}">${t} (${Q.filter(q=>q.tp===t).length})</option>`).join("")}</optgroup>`};
-const mix=()=>{const g={};Q.forEach(q=>(g[q.tp]=g[q.tp]||[]).push(q));const ks=shuf(Object.keys(g));ks.forEach(k=>g[k]=shuf(g[k]));const out=[];let more=true;while(more){more=false;ks.forEach(k=>{if(g[k].length){out.push(g[k].pop());more=true}})}return out};
-const PK={tw:6,ti:8,tk:10,min:22};
-const nPack=Math.min(Math.floor(nQ("TWK")/PK.tw),Math.floor(nQ("TIU")/PK.ti),Math.floor(nQ("TKP")/PK.tk));
-const PACK=Array.from({length:nPack},(_,i)=>({n:"Paket "+(i+1),tw:PK.tw,ti:PK.ti,tk:PK.tk,min:PK.min}));
-const BAD=Q.map((q,i)=>{const mx=Math.max(...q.o.map(o=>o.p));const ok=["TWK","TIU","TKP"].includes(q.k)&&q.q&&q.e&&q.o.length===5&&q.o.filter(o=>o.p===mx).length===1&&(q.k!=="TKP"||q.o.map(o=>o.p).sort().join("")==="12345");return ok?0:i+1}).filter(Boolean);
-let C=null,tmr=null;
-const idxOf=k=>Q.map((q,i)=>q.k===k?i:-1).filter(i=>i>=0);
-const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
-function ringSvg(pct){return `<svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Skor ${pct} persen"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--bd)" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="var(--ac)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(pct*3.267).toFixed(1)} 400" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-size="26" font-weight="700" fill="var(--fg)">${pct}%</text></svg>`}
-function startCat(p){
- const P=PACK[p],s=n=>idxOf(n.k).slice(p*n.c,p*n.c+n.c);
- C={p,qs:[...s({k:"TWK",c:P.tw}),...s({k:"TIU",c:P.ti}),...s({k:"TKP",c:P.tk})],ans:{},flag:{},cur:0,end:Date.now()+P.min*60000,sure:false};
- clearInterval(tmr);tmr=setInterval(tick,1000);catShow();window.scrollTo(0,0);
-}
-function tick(){
- const r=Math.max(0,Math.round((C.end-Date.now())/1000)),e=document.getElementById("tm");
- if(e)e.textContent=fmt(r);
- if(r<=0)catFin();
-}
-function go(n){C.cur=Math.max(0,Math.min(C.qs.length-1,n));C.sure=false;catShow();window.scrollTo(0,0)}
-function catShow(){
- const k=C.qs[C.cur],q=Q[k];save();
- app.innerHTML=`<div class="top"><span class="tag">${q.k}</span><b id="tm" class="tm"></b></div>
- <p class="mut">Soal ${C.cur+1} dari ${C.qs.length}</p><p class="q">${esc(q.q)}</p>
- ${q.o.map((o,j)=>`<button class="btn opt${C.ans[k]===j?" sel":""}" data-j="${j}"><span class="l">${String.fromCharCode(65+j)}</span><span>${esc(o.t)}</span></button>`).join("")}
- <div class="row"><button class="btn" id="pv">Sebelumnya</button><button class="btn" id="fl">${C.flag[k]?"Batal ragu":"Ragu-ragu"}</button><button class="btn" id="nx2">Berikutnya</button></div>
- <h2>Navigasi soal</h2><div class="nav">${C.qs.map((x,n)=>`<button class="nb${n===C.cur?" cur":""}${C.ans[x]!==undefined?" done":""}${C.flag[x]?" flg":""}" data-n="${n}" aria-label="Soal ${n+1}">${n+1}${C.flag[x]?"*":""}</button>`).join("")}</div>
- <p class="mut">Terisi = dijawab. Tanda * = ragu-ragu.</p>
- <button class="btn pri" id="fin">${C.sure?"Yakin selesai? Ketuk lagi":"Selesai ujian"}</button>`;
- app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{C.ans[k]=+b.dataset.j;C.sure=false;catShow()});
- app.querySelectorAll(".nb").forEach(b=>b.onclick=()=>go(+b.dataset.n));
- document.getElementById("pv").onclick=()=>go(C.cur-1);
- document.getElementById("nx2").onclick=()=>go(C.cur+1);
- document.getElementById("fl").onclick=()=>{C.flag[k]=!C.flag[k];C.sure=false;catShow()};
- document.getElementById("fin").onclick=()=>{if(C.sure)catFin();else{C.sure=true;catShow()}};
- tick();
-}
-function catFin(){
- clearInterval(tmr);drop();
- const S={TWK:[0,0],TIU:[0,0],TKP:[0,0]};
- C.qs.forEach(k=>{const q=Q[k];S[q.k][1]+=Math.max(...q.o.map(o=>o.p));if(C.ans[k]!==undefined)S[q.k][0]+=q.o[C.ans[k]].p});
- const ks=Object.keys(S).filter(x=>S[x][1]>0),tot=ks.reduce((a,x)=>a+S[x][0],0),mxs=ks.reduce((a,x)=>a+S[x][1],0),pct=Math.round(tot/mxs*100);addHist(PACK[C.p].n,pct);
- const na=C.qs.filter(k=>C.ans[k]===undefined).length,line=ks.map(x=>`${x} ${S[x][0]}/${S[x][1]}`).join(", ");
- app.innerHTML=`<h1>Hasil ${PACK[C.p].n}</h1>
- <div class="card"><div class="ring">${ringSvg(pct)}</div><p style="text-align:center;margin:0 0 6px"><strong>${tot} dari ${mxs} poin</strong></p><p class="mut" style="text-align:center">${na} soal tidak dijawab.</p>
- ${ks.map(x=>`<div class="row2"><span>${x}</span><span>${S[x][0]} / ${S[x][1]}</span></div><div class="bar" style="margin:0"><i style="width:${S[x][0]/S[x][1]*100}%"></i></div>`).join("")}</div>
- <p class="mut">Ini simulasi mini, bukan prediksi nilai SKD sebenarnya.</p>
- <button class="btn pri" id="sr">Bagikan hasil ke WhatsApp</button>
- <h2>Pembahasan</h2>
- ${C.qs.map((k,n)=>{const q=Q[k],a=C.ans[k],best=Math.max(...q.o.map(o=>o.p)),bi=q.o.findIndex(o=>o.p===best);return `<details class="card"><summary><b>${n+1}.</b> ${esc(q.q)}</summary><p style="margin-top:8px">Jawabanmu: ${a===undefined?"tidak dijawab":esc(q.o[a].t)+" ("+q.o[a].p+" poin)"}</p><p>Terbaik: ${esc(q.o[bi].t)} (${best} poin)</p><p class="mut">${esc(q.e)}</p></details>`}).join("")}
- <button class="btn" id="ag">Kembali ke awal</button>`;
- document.getElementById("sr").onclick=()=>wa("Hasil simulasi "+PACK[C.p].n+" SKD CPNS 2026 saya: "+line+". Coba juga: "+url());
- document.getElementById("ag").onclick=home;
- window.scrollTo(0,0);
-}
-const KEY="skd-cat-v1";
-function save(){try{if(C)localStorage.setItem(KEY,JSON.stringify(C))}catch(e){}}
-function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.end>Date.now())return s;localStorage.removeItem(KEY)}catch(e){}return null}
-function drop(){try{localStorage.removeItem(KEY)}catch(e){}}
-function resume(){const s=load();if(!s)return home();C=s;clearInterval(tmr);tmr=setInterval(tick,1000);catShow();window.scrollTo(0,0)}
-home();
-if("serviceWorker" in navigator)addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
-</script>
+<main id="app"><noscript><p style="padding:24px">Aplikasi ini membutuhkan JavaScript. Aktifkan JavaScript di browsermu.</p></noscript></main>
+<script src="js/config.js"></script>
+<script src="js/bank.js"></script>
+<script src="data/akhlak-2.js"></script>
+<script src="data/akhlak-3.js"></script>
+<script src="data/akhlak-4.js"></script>
+<script src="data/akhlak.js"></script>
+<script src="data/tiu-2.js"></script>
+<script src="data/tiu-3.js"></script>
+<script src="data/tiu-4.js"></script>
+<script src="data/tiu.js"></script>
+<script src="data/tkd-2.js"></script>
+<script src="data/tkd-3.js"></script>
+<script src="data/tkd-4.js"></script>
+<script src="data/tkd.js"></script>
+<script src="data/tkp-2.js"></script>
+<script src="data/tkp-3.js"></script>
+<script src="data/tkp-4.js"></script>
+<script src="data/tkp-5.js"></script>
+<script src="data/tkp-6.js"></script>
+<script src="data/tkp-7.js"></script>
+<script src="data/tkp.js"></script>
+<script src="data/twk-2.js"></script>
+<script src="data/twk-3.js"></script>
+<script src="data/twk-4.js"></script>
+<script src="data/twk-5.js"></script>
+<script src="data/twk-6.js"></script>
+<script src="data/twk-7.js"></script>
+<script src="data/twk.js"></script>
+<script src="js/topics.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/modes.js"></script>
+<script src="js/app.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/pwa.js"></script>
 </body>
 </html>
