@@ -1,0 +1,29 @@
+/* LAPISAN MENYENANGKAN 3D: kubus berputar, kartu membalik masuk, percikan saat benar, rangkaian benar. Tanpa emoji. */
+.hero3d{width:60px;height:60px;margin:2px auto 24px;perspective:700px}
+.cube{position:relative;width:60px;height:60px;transform-style:preserve-3d;animation:cubespin 10s linear infinite}
+.cube i{position:absolute;inset:0;display:grid;place-items:center;font:800 11px/1 'Orbitron',system-ui,sans-serif;font-style:normal;color:#7df9ff;border:2px solid rgba(0,229,255,.85);background:rgba(0,229,255,.10);box-shadow:0 0 18px rgba(0,229,255,.55),inset 0 0 16px rgba(124,77,255,.45)}
+.cube i:nth-child(1){transform:translateZ(30px)}
+.cube i:nth-child(2){transform:rotateY(90deg) translateZ(30px)}
+.cube i:nth-child(3){transform:rotateY(180deg) translateZ(30px)}
+.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(30px)}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(30px)}
+.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(30px)}
+@keyframes cubespin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+.hero3d::after{content:"";display:block;width:74px;height:12px;margin:30px auto 0;border-radius:50%;background:radial-gradient(closest-side,rgba(0,229,255,.45),transparent);filter:blur(3px)}
+.opt{position:relative}
+.q.enter{animation:flipin .6s cubic-bezier(.2,.8,.2,1) backwards;transform-origin:50% 0}
+.opt.enter{animation:flipin .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*70ms + 120ms)}
+@keyframes flipin{from{opacity:0;transform:perspective(800px) rotateX(-70deg) translateY(24px)}to{opacity:1;transform:perspective(800px) rotateX(0) translateY(0)}}
+.opt.ok{animation:okpulse .7s ease-out}
+@keyframes okpulse{0%{transform:scale(1)}40%{transform:scale(1.03)}100%{transform:scale(1)}}
+.opt.bad{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.spark{position:absolute;right:28px;top:50%;width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,#00e5ff,#b388ff);box-shadow:0 0 8px rgba(0,229,255,.9);pointer-events:none;animation:sparkfly .8s ease-out forwards}
+.spark:nth-child(odd){background:linear-gradient(135deg,#2ee6a6,#ffc857)}
+@keyframes sparkfly{from{opacity:1;transform:translate(0,0) rotate(0) scale(1)}to{opacity:0;transform:translate(var(--x),var(--y)) rotate(260deg) scale(.2)}}
+.streak{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:50;padding:7px 14px;border-radius:999px;font:800 12px 'Orbitron',system-ui,sans-serif;color:#031018;background:linear-gradient(135deg,#ffc857,#ff8a3d);box-shadow:0 4px 0 #8a4a10,0 0 22px rgba(255,160,60,.55);opacity:0;transform:translateY(-14px) scale(.8);pointer-events:none}
+.streak.on{animation:streakpop .5s cubic-bezier(.2,1.4,.3,1) forwards}
+@keyframes streakpop{to{opacity:1;transform:none}}
+.score{animation:glowpulse 2.4s ease-in-out infinite}
+@keyframes glowpulse{50%{filter:drop-shadow(0 0 32px rgba(0,229,255,.95))}}
+@media (prefers-reduced-motion:reduce){.cube,.score,.q.enter,.opt.enter,.opt.ok,.opt.bad,.spark,.streak.on{animation:none!important}.streak.on{opacity:1;transform:none}}
