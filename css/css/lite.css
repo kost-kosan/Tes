@@ -1,0 +1,6 @@
+/* MODE RINGAN: tanpa animasi, kaca, dan bayangan berlapis. Aktif bila html memiliki kelas "lite". */
+.lite *,.lite *::before,.lite *::after{animation:none!important;transition:none!important}
+.lite body::before,.lite .scene,.lite .hero3d{display:none!important}
+.lite .cat,.lite .opt,.lite .info,.lite .exp,.lite .q,.lite select,.lite .inp,.lite .seg,.lite .nav button,.lite .stat,.lite .week{-webkit-backdrop-filter:none;backdrop-filter:none;background:#0e1530;box-shadow:0 4px 0 #0d2a66}
+.lite .btn{box-shadow:0 5px 0 #083a76}.lite .btn.wa{box-shadow:0 5px 0 #06382b}.lite .btn::after{display:none}
+.lite h1,.lite .score{filter:none}.lite .q{transform:none}.lite .streak.on{opacity:1;transform:none}

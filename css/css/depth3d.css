@@ -1,0 +1,69 @@
+/* KEDALAMAN 3D - dimuat paling akhir. Semua elemen punya ketebalan (extrude), sudut cahaya dari kiri atas,
+   panggung berperspektif, dan objek 3D melayang. Ubah --ex dan --ex2 untuk warna sisi tebal. */
+:root:root{--ex:#0d2a66;--ex2:#1b52ad;--rim:rgba(160,250,255,.6)}
+#app{perspective:1300px;perspective-origin:50% 12%}
+/* panggung: lantai grid dan bentuk melayang mengikuti kemiringan */
+body::before{translate:calc(var(--px,0)*-22px) calc(var(--py,0)*-8px)}
+.scene{position:fixed;inset:0;z-index:-1;pointer-events:none;perspective:900px;overflow:hidden}
+.scene s{position:absolute;display:block;width:76px;height:76px;border-radius:14px;border:2px solid rgba(0,229,255,.38);
+  background:linear-gradient(135deg,rgba(0,229,255,.16),rgba(124,77,255,.16));box-shadow:0 0 26px rgba(0,229,255,.25),inset 0 0 18px rgba(179,136,255,.25);
+  translate:calc(var(--px,0)*var(--d)*1px) calc(var(--py,0)*var(--d)*1px);transform:rotateX(55deg) rotateZ(25deg)}
+.scene s:nth-child(1){left:-18px;top:22%;--d:30;animation:floaty 9s ease-in-out infinite}
+.scene s:nth-child(2){right:-22px;top:46%;width:96px;height:96px;--d:-42;animation:floaty 11s ease-in-out -3s infinite}
+.scene s:nth-child(3){left:12%;bottom:8%;width:54px;height:54px;--d:24;animation:floaty 8s ease-in-out -5s infinite}
+@keyframes floaty{0%,100%{transform:rotateX(55deg) rotateZ(25deg) translateY(0)}50%{transform:rotateX(62deg) rotateZ(48deg) translateY(-26px)}}
+/* judul dan skor: huruf tebal berlapis */
+h1,.score{filter:drop-shadow(1px 1px 0 #0b4f94) drop-shadow(1px 1px 0 #0a4688) drop-shadow(1px 1px 0 #093c7a) drop-shadow(1px 1px 0 #08326c) drop-shadow(0 14px 16px rgba(0,0,0,.65)) drop-shadow(0 0 18px rgba(0,229,255,.4))}
+/* papan tebal */
+.cat,.opt,.info,.exp,.q,select,.inp{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,0)),rgba(14,21,48,.86);border:1px solid rgba(160,250,255,.30);
+  box-shadow:0 1px 0 var(--ex2),0 2px 0 var(--ex2),0 3px 0 var(--ex2),0 4px 0 var(--ex),0 5px 0 var(--ex),0 6px 0 var(--ex),0 7px 0 var(--ex),0 24px 30px rgba(0,0,0,.62),0 0 26px rgba(0,229,255,.12),inset 0 1px 0 var(--rim),inset 0 -3px 8px rgba(0,0,0,.4)}
+.q{padding:16px 18px;border-radius:18px;line-height:1.45;transform-origin:50% 100%;transform:rotateX(4deg)}
+.q.enter{animation-name:flipin}
+.opts{display:grid;gap:18px;margin:20px 0 22px}
+.cats{gap:20px}
+.exp,.info{margin-bottom:12px}
+/* tombol kunci tebal */
+.opt{transition:transform .14s,box-shadow .14s,border-color .14s}
+.opt:not(:disabled):hover{transform:translateY(-4px);box-shadow:0 1px 0 var(--ex2),0 2px 0 var(--ex2),0 3px 0 var(--ex2),0 4px 0 var(--ex),0 5px 0 var(--ex),0 6px 0 var(--ex),0 7px 0 var(--ex),0 11px 0 var(--ex),0 32px 34px rgba(0,0,0,.6),0 0 34px rgba(0,229,255,.3),inset 0 1px 0 var(--rim)}
+.opt:not(:disabled):active{transform:translateY(7px);box-shadow:0 1px 0 var(--ex),0 6px 10px rgba(0,0,0,.6),inset 0 2px 8px rgba(0,0,0,.5)}
+.opt.sel,.opt.ok,.opt.bad{transform:translateY(5px)}
+.opt.ok{box-shadow:0 1px 0 #0b5a45,0 2px 0 #0a4a3a,0 3px 0 #093f32,0 22px 26px rgba(0,0,0,.5),0 0 30px rgba(46,230,166,.5),inset 0 1px 0 rgba(200,255,235,.6)}
+.opt.bad{box-shadow:0 1px 0 #6a1a30,0 2px 0 #5a1226,0 3px 0 #4a0f20,0 22px 26px rgba(0,0,0,.5),0 0 30px rgba(255,92,122,.5),inset 0 1px 0 rgba(255,200,210,.5)}
+.opt.sel{box-shadow:0 1px 0 #06406a,0 2px 0 #05365a,0 3px 0 #042c4a,0 22px 26px rgba(0,0,0,.5),0 0 30px rgba(0,229,255,.55),inset 0 1px 0 var(--rim)}
+.btn{box-shadow:inset 0 2px 0 rgba(255,255,255,.65),0 1px 0 #0e68b6,0 2px 0 #0d62ad,0 3px 0 #0c5aa2,0 4px 0 #0b5297,0 5px 0 #0a4a8c,0 6px 0 #094281,0 8px 0 #083a76,0 22px 28px rgba(0,0,0,.58),0 0 32px rgba(0,229,255,.42);margin-bottom:12px}
+.btn:hover:not(:disabled){transform:translateY(-3px)}
+.btn:active:not(:disabled){transform:translateY(8px);box-shadow:inset 0 2px 0 rgba(255,255,255,.4),0 0 0 #083a76,0 6px 10px rgba(0,0,0,.6),0 0 18px rgba(0,229,255,.3)}
+.btn.ghost{box-shadow:0 1px 0 var(--ex2),0 2px 0 var(--ex2),0 3px 0 var(--ex),0 4px 0 var(--ex),0 5px 0 var(--ex),0 6px 0 var(--ex),0 16px 22px rgba(0,0,0,.5),inset 0 1px 0 var(--rim)}
+.btn.wa{box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 1px 0 #0c8a6c,0 2px 0 #0b7c61,0 3px 0 #0a6e56,0 4px 0 #09604b,0 5px 0 #085240,0 6px 0 #074535,0 8px 0 #06382b,0 22px 28px rgba(0,0,0,.58),0 0 30px rgba(46,230,166,.4)}
+/* pilih jenis: tombol timbul, yang aktif tenggelam menyala */
+.seg{padding:8px;gap:8px;box-shadow:inset 0 4px 10px rgba(0,0,0,.7),0 1px 0 rgba(160,250,255,.15)}
+.seg button{border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 50%),rgba(20,32,70,.9);box-shadow:0 1px 0 var(--ex2),0 2px 0 var(--ex2),0 3px 0 var(--ex),0 4px 0 var(--ex),0 5px 0 var(--ex),inset 0 1px 0 var(--rim);transition:transform .12s,box-shadow .12s}
+.seg button:hover{transform:translateY(-2px)}
+.seg button.on{transform:translateY(4px);box-shadow:0 1px 0 var(--ex),inset 0 2px 8px rgba(0,0,0,.45),0 0 0 1px rgba(0,229,255,.7),0 0 22px rgba(0,229,255,.45)}
+/* tabung kemajuan */
+.bar{height:16px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 4px 7px rgba(0,0,0,.75),0 1px 0 rgba(160,250,255,.18)}
+.bar i{border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 55%),linear-gradient(90deg,#00e5ff,#b388ff);box-shadow:0 0 18px rgba(0,229,255,.8),inset 0 -3px 5px rgba(0,0,0,.3)}
+/* navigator CAT dan lencana */
+.nav{gap:10px}
+.nav button{box-shadow:0 1px 0 var(--ex2),0 2px 0 var(--ex),0 3px 0 var(--ex),0 4px 0 var(--ex),inset 0 1px 0 var(--rim);transition:transform .1s}
+.nav button:active{transform:translateY(4px);box-shadow:inset 0 2px 6px rgba(0,0,0,.5)}
+.opt .b,.badge{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 1px 0 #0a5ca8,0 2px 0 #094a8c,0 3px 0 #083a70,0 8px 12px rgba(0,0,0,.5),0 0 14px rgba(0,229,255,.45)}
+/* objek 3D di beranda: kubus ganda dan cincin orbit */
+.hero3d{width:96px;height:96px;margin:6px auto 44px;perspective:800px;position:relative}
+.cube{width:96px;height:96px}
+.cube i{font-size:13px}
+.cube i:nth-child(1){transform:translateZ(48px)}
+.cube i:nth-child(2){transform:rotateY(90deg) translateZ(48px)}
+.cube i:nth-child(3){transform:rotateY(180deg) translateZ(48px)}
+.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(48px)}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(48px)}
+.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(48px)}
+.cube .inner{position:absolute;left:28px;top:28px;width:40px;height:40px;transform-style:preserve-3d;animation:cubespin 6s linear infinite reverse}
+.cube .inner u{position:absolute;inset:0;background:linear-gradient(135deg,rgba(179,136,255,.7),rgba(0,229,255,.55));box-shadow:0 0 18px rgba(179,136,255,.85)}
+.inner u:nth-child(1){transform:translateZ(20px)}.inner u:nth-child(2){transform:rotateY(90deg) translateZ(20px)}.inner u:nth-child(3){transform:rotateY(180deg) translateZ(20px)}
+.inner u:nth-child(4){transform:rotateY(-90deg) translateZ(20px)}.inner u:nth-child(5){transform:rotateX(90deg) translateZ(20px)}.inner u:nth-child(6){transform:rotateX(-90deg) translateZ(20px)}
+.ring3d{position:absolute;left:-30px;top:-30px;width:156px;height:156px;border-radius:50%;border:2px solid rgba(179,136,255,.75);box-shadow:0 0 20px rgba(179,136,255,.6),inset 0 0 18px rgba(179,136,255,.3);transform:rotateX(74deg);animation:ringspin 7s linear infinite}
+.ring3d::after{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#7df9ff;box-shadow:0 0 16px #7df9ff,0 0 30px rgba(0,229,255,.9)}
+@keyframes ringspin{from{transform:rotateX(74deg) rotateZ(0)}to{transform:rotateX(74deg) rotateZ(360deg)}}
+.hero3d::after{width:120px;height:18px;margin:60px auto 0;background:radial-gradient(closest-side,rgba(0,229,255,.5),transparent)}
+@media (prefers-reduced-motion:reduce){.scene s,.ring3d,.cube .inner{animation:none!important}.q{transform:none}}

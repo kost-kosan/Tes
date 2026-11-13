@@ -1,0 +1,12 @@
+/* Halaman Progres */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 22px}
+.stat,.week{background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 45%),rgba(14,21,48,.86);border:1px solid rgba(160,250,255,.28);box-shadow:0 1px 0 #1b52ad,0 2px 0 #1b52ad,0 3px 0 #0d2a66,0 4px 0 #0d2a66,0 5px 0 #0d2a66,0 18px 24px rgba(0,0,0,.55),inset 0 1px 0 rgba(160,250,255,.5)}
+.stat{padding:14px;border-radius:16px;text-align:center}
+.stat b{display:block;font:800 26px 'Orbitron',system-ui,sans-serif;color:var(--g1);margin-bottom:2px}
+.stat small{color:var(--mut)}
+.week{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;height:140px;margin:10px 0 24px;padding:12px;border-radius:16px}
+.week .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px}
+.week .col i{width:100%;max-width:26px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#00e5ff,#7c4dff);box-shadow:0 0 12px rgba(0,229,255,.5)}
+.week small{color:var(--mut);font-size:11px}.week b{font-size:11px}
+.trow{margin:14px 0}.tl{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:6px}
+.empty{padding:18px;border-radius:16px;text-align:center;color:var(--mut)}
